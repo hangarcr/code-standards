@@ -3,64 +3,66 @@
 <section id="js">
 
 	<div class="intro has-icon">
-		<img class="icon" src="css/img/icon-curly.png" alt="{}" />
-
+		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		
 		<h1>JavaScript</h1>
 	
-		<p>El código JavaScript, cuando se aplica correctamente a una página web, mejora la experiencia de usuario global y basada en navegador a través de la asociación a eventos y el control de la capa de comportamiento en general.</p>
+		<p>JavaScript is the third major component of a web page. JavaScript code, when properly applied to a web page, enhances the overall user and browser-based experience through attaching to events and controlling the overall behavior layer.</p>
 
-		<p>JavaScript ha visto una explosión en popularidad en los últimos años debido a las potentes nuevas implementaciones de los navegadores que han facultado finalmente la creación de aplicaciones totalmente basadas en el navegador web. Además, un uso cuidadoso de JavaScript permite la completa manipulación y control sobre los otros dos componentes de la creación de páginas web, <a href="#markup">el etiquetado HTML</a> y <a href="#css">las CSS</a>. Hoy en día la estructura de las páginas y los estilos visuales de las páginas pueden ser manipulados en tiempo real sin necesidad de actualizar la página web completa.</p>
+		<p>JavaScript has seen an explosion in popularity in recent years as powerful new browser implementations have finally empowered the creation of full on browser-based web applications. Additionally, careful use of JavaScript allows for full manipulation and control over the other two components of web page authoring, <a href="#markup">HTML Markup</a> and <a href="#css">CSS</a>. Today the structure of pages and the visual styles of pages can be manipulated real time without full web page refreshes.</p>
 	</div>
 
-	<h2>Bibliotecas JavaScript</h2>
+	<h2>JavaScript Libraries</h2>
 
-		<p class="normalize">Principalmente desarrollamos nuevas aplicaciones en <a href="http://api.jquery.com/">jQuery</a>, aunque tenemos un gran dominio del JavaScript normal, así como de todas las bibliotecas modernas de javascript más importantes.</p>
+		<p class="normalize">We primarily develop new applications in <a href="http://api.jquery.com/">jQuery</a>, though we have expertise in plain JavaScript as well as all major modern javascript libraries.</p>
 	
-	<h2>Principios Generales de Creación de Código</h2>
+	<h2>General Coding Principles</h2>
 	
 	<ul>
-		<li>99% del código debe estar alojado en archivos JavaScript externos. Deben ser incluidos al FINAL de la etiqueta BODY para obtener un rendimiento máximo de página.</li>
-		<li>No se base en la cadena de agente de usuario (user-agent). Haga una adecuada detección de características. (Más información en <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detection</a> y <a href="http://api.jquery.com/jQuery.support/">la documentación jQuery.support</a>)</li>
-		<li>No utilice document.write ().</li>
-		<li>Todas las variables booleanas deben comenzar con "is".
-			<figure class="preCode">Probando condiciones positivas</figure>
+		<li>99% of code should be housed in external javascript files. They should be included at the END of the BODY tag for maximum page performance.</li>
+		<li>Don't rely on the user-agent string. Do proper feature detection. (More at <a href="http://diveintohtml5.info/detect.html">Dive Into HTML5: Detection</a> &amp; <a href="http://api.jquery.com/jQuery.support/">jQuery.support docs</a>)</li>
+		<li>Don't use document.write().</li>
+		<li>All Boolean variables should start with "is".
+			<figure class="preCode">Test for positive conditions</figure>
 			<textarea class="brush:js">
 			isValid = (test.value >= 4 && test.success);
 			</textarea>
 		</li>
+		<li>Name variables and functions logically: For example: <code>popUpWindowForAd</code> rather than <code>myWindow</code>.</li>
+        <li>Don't manually minify. With the exception of the traditional <code>i</code>, etc. for <code>for</code> loops, variables should be long enough to be meaningful.</li>
+		<li>Documentation should follow <a href="http://www.naturaldocs.org/documenting.html">NaturalDocs</a> structure.</li>
+		<li>Constants or configuration variables (like animation durations, etc.) should be at the top of the file.</li>
 
-		<li>Nombre las variables y funciones lógicamente. Por ejemplo: <code>popUpWindowForAd</code> en lugar de <code>myWindow</code>.</li>
-        <li>No minimice manualmente. A excepción de la tradicional <code>i</code>, etc. para bucles <code>for</code>, las variables deben ser lo suficientemente largas para que tengan sentido.</li>
-		<li>La documentación debe seguir la estructura de <a href="http://www.naturaldocs.org/documenting.html">NaturalDocs</a>.</li>
-		<li>Las constantes o variables de configuración (como la duración de las animaciones, etc.) deben estar en la parte superior del archivo.</li>
-		<li>Esfuércese por crear funciones que puedan ser generalizadas, tomar parámetros y devolver valores. Esto permite la reutilización sustancial del código y cuando se combina con includes o scripts externos, puede reducir la sobrecarga cuando los scripts tienen que cambiar. Por ejemplo, en lugar de escribir  directamente el código de una ventana emergente con el tamaño de la ventana, opciones y url, considere el crear una función que tome el tamaño, url y opciones como variables.
+		<li>Strive to create functions which can be generalized, take parameters, and return values. This allows for substantial code reuse and, when combined with includes or external scripts, can reduce the overhead when scripts need to change. For example, instead of hard coding a pop-window with window size, options, and url, consider creating a function which takes size, url, and options as variables.
 		</li>
-		<li>¡Comente su código! Ayuda a reducir el tiempo dedicado a solucionar problemas de funciones de JavaScript.</li>
-		<li>No pierda su tiempo con comentarios <code>&lt;!-- --&gt;</code> en torno a su javascript incrustado, a menos que se preocupe por Netscape 4.&nbsp;:)</li>
-		<li>Organice su código como un <a href="http://kaijaeger.com/articles/the-singleton-design-pattern-in-javascript.html">Objeto Literal/Singleton</a>, en el <a href="http://www.yuiblog.com/blog/2007/06/12/module-pattern/">Patrón de Módulo</a>, o como un <a href="http://mckoss.com/jscript/object.htm">Objeto con constructores</a></a>.</li>
+		<li>Comment your code! It helps reduce time spent troubleshooting JavaScript functions.</li>
+		<li>Don't waste your time with <code>&lt;!-- --&gt;</code> comments surrounding your inline javascript, unless you care about Netscape 4.&nbsp;:)</li>
+		<li>Organize your code as an <a href="http://kaijaeger.com/articles/the-singleton-design-pattern-in-javascript.html">Object Literal/Singleton</a>, in the <a href="http://www.yuiblog.com/blog/2007/06/12/module-pattern/">Module Pattern</a>, or as an <a href="http://mckoss.com/jscript/object.htm">Object with constructors</a></a>.</li>
 	
-	  <li>Minimice las variables globales. Mientras menos globales cree, mejor. Generalmente una para el namespace de su aplicación, es un buen número. 
-			<figure class="preCode">Cuando especifique cualquier variable global, identifíquela claramente</figure>		
+	  <li>Minimize global variables - the less globals you create, the better. Generally one, for your application namespace, is a good number. 
+			<figure class="preCode">When specifying any global variable, clearly identify it</figure>		
 			<textarea class="brush:js">
 			window.globalVar = { ... }
 			</textarea>
 		</li>
 	</ul>
 	
-	<h3>Espacio en blanco</h3>
 	
-	<p>En general, el uso de espacios en blanco debe seguir las convenciones de la lectura en inglés de larga data. Por lo que deberá haber un espacio después de cada coma y dos puntos (y el punto y coma en su caso), pero ningún espacio directamente al lado interior derecho e izquierdo de los paréntesis. En definitiva, abogamos por la legibilidad dentro de lo razonable. Además, las llaves siempre deben aparecer en la misma línea que su argumento precedente.</p>
+	<h3>White-space</h3>
 	
-	<p>Considere los siguientes ejemplos de un bucle for de JavaScript...</p>
+	<p>In general, the use of whitespace should follow longstanding English reading conventions. Such that, there will be one space after each comma and colon (and semi-colon where applicable), but no spaces immediately inside the right and left sides of parenthesis. In short, we advocate readability within reason. Additionally, braces should always appear on the same line as their preceding argument.</p>
 	
-	<figure class="preCode">Correcto</figure>
+	<p>Consider the following examples of a JavaScript for-loop...</p>
+	
+	
+	<figure class="preCode">Correct</figure>
 	<textarea class="brush:js">
 		for (var i = 0, j = arr.length; i < j; i++) {
 			// Do something.
 		}
 	</textarea>
 	
-	<figure class="preCode">Incorrecto</figure>
+	<figure class="preCode">Incorrect</figure>
 	<textarea class="brush:js">
 		for ( var i = 0, j = arr.length; i < j; i++ )
 		{
@@ -68,7 +70,7 @@
 		}
 	</textarea>
 	
-	<figure class="preCode">También incorrecto</figure>
+	<figure class="preCode">Also incorrect</figure>
 	<textarea class="brush:js">
 		for(var i=0,j=arr.length;i<j;i++){
 			// Do something.
@@ -78,13 +80,13 @@
 
 	<h3>plugins.js and script.js</h3>
 	
-	<p>Empezando con la H5BP se nos presentan dos archivos, plugins.js y script.js. Esta sección describe el uso básico de estos dos archivos.</p>
+	<p>Starting with H5BP we're presented with two files, plugins.js and script.js. This section outlines basic usage of these two files.</p>
 	
 	<h4>plugins.js</h4>
 	
-	<p>Plugins.js está destinado a contener todo el código de los plugins del sitio. En lugar de vincular a muchos archivos diferentes, se puede mejorar el rendimiento mediante la inclusión del código de los plugins directamente en este archivo. Pueden y deben haber excepciones a este uso. Un plugin muy grande utilizado en una página poco visitada, por ejemplo, podría ser mejor en una descarga por separado, al cual se accede solamente en la página específica. La mayor parte del tiempo, sin embargo, es seguro pegar las versiones minimizadas de todos sus plugins aquí para facilitar el acceso.</p>
-
-	<p>Aquí tiene un ejemplo de como se vería un archivo de ejemplo, incluyendo una pequeña tabla de contenido. Esto puede servir como una guía práctica sobre qué plugins se están usando, incluyendo URLs para documentación, justificación de uso y similares.</p>
+	<p>Plugins.js is meant to hold all of a sites plugin code. Instead of linking to many different files, we can improve performance by including plugin code directly in this one file. There can and should be exceptions to this usage. An extremely large plugin only used on one rarely visited page, for example, might be better off in a separate download, only accessed on the target page. Most of the time, however, it's safe to just paste in minified versions of all your plugins here for easy access. </p>
+	
+	<p>Here's what an example file might looks like, including a small table of contents. This can serve as a handy guide for what plugins are in use, including URLs for documentation, rationale for use and the like.</p>
 	
 	<textarea class="brush:js">
 	/* PLUGIN DIRECTORY
@@ -166,9 +168,9 @@
 
 	<h4>Script.js</h4>
 
-	<p>Script.js está pensado para contener el código de su sitio o aplicación. Nuevamente, esta no es siempre la mejor solución ya que equipos de trabajo más grandes y/o proyectos más ricos en características o más grandes pueden beneficiarse realmente de segmentar el código de la aplicación en módulos o archivos sobre características específicas. Para sitios más pequeños, aplicaciones más simples y prototipos iniciales, sin embargo, colocar su trabajo en scripts.js tiene sentido.</p>
-
-	<p>Un ejemplo simplificado, utilizando el patrón de <a href='http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/'>Ejecución imperceptible integral preparada-para-DOM basada-en-Etiquetado</a>, podría verse como algo parecido a lo siguiente:</p>
+	<p>Script.js is meant to hold your site or application code. Again, this isn't always the best solution as larger teams and or larger, more feature rich projects can really benefit from breaking out application code into module or feature specific files. For smaller sites, simpler applications, and initial prototyping, however, dropping your work into scripts.js makes sense.</p>
+	
+	<p>A simplified example, using the <a href='http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/'>Markup-based unobtrusive comprehensive DOM-ready execution</a> pattern, might look something like the following:</p>
 
 	<textarea class="brush:js">     
 	/* Name: Demo
@@ -208,21 +210,21 @@
 	</textarea>
 
 	
-	<h2>Variables, ID y Clases</h2>
+	<h2>Variables, ID &amp; Class</h2>
 	
-	<p>Todas las variables de JavaScript deberán escribirse o completamente con minúsculas o en estilo camelCase. La única excepción a esto son las funciones Constructor, que se colocan en mayúsculas por tradición. Todas las declaraciones de <code>id</code> y <code>class</code> en CSS deberán escribirse en minúsculas solamente. No deben usarse guiones ni subrayados.</p>
-	
-	
-	<h3>Delegación de Eventos</h3>
-	
-	<p>Al asignar detectores de eventos (event listeners) imperceptibles, es generalmente aceptable asignar el detector de eventos directamente a los elementos que activarán alguna acción resultante. Sin embargo, en ocasiones puede haber varios elementos que coincidan con los criterios que está evaluando y adjuntar  detectores de eventos a cada uno de ellos podría afectar negativamente el rendimiento. En tales casos debe utilizar la delegación de eventos en su lugar.</p>
-
-	<p><a href="http://api.jquery.com/delegate">delegate()</a> de jQuery es preferible a <a href="http://api.jquery.com/live">live()</a> por razones de rendimiento.</p>
+	<p>All JavaScript variables shall be written in either completely lowercase letter or camelCase. The one exception to this are Constructor functions, which are capitalized by tradition. All <code>id</code> and <code>class</code> declarations in CSS shall be written in only lowercase. Neither dashes nor underscores shall be used. </p>
 	
 	
-	<h3>Depuración</h3>
+	<h3>Event Delegation</h3>
 	
-	<p>Incluso con el mejor de los validadores, inevitablemente ciertas peculiaridades de navegador causarán problemas. Existen varias herramientas muy valiosas que le ayudarán a perfeccionar la integridad del código y la velocidad de carga. Es importante que tenga todas estas herramientas a su disposición, a pesar del navegador que utilice principalmente para el desarrollo. Se recomienda desarrollar para Firefox y Safari en primer lugar y luego para Google Chrome y Opera, con ajustes adicionales a través de los comentarios condicionales sólo para Internet Explorer. La siguiente es una lista de depuradores y analizadores de velocidad útiles...</p>
+	<p>When assigning unobtrusive event listeners, it is typically acceptable to assign the event listener directly to the element(s) which will trigger some resulting action. However, occasionally there may be multiple elements which match the criteria for which you are checking, and attaching event listeners to each one might negatively impact performance. In such cases you should use event delegation instead.</p>
+	
+	<p>jQuery's <a href="http://api.jquery.com/delegate">delegate()</a> is preferred over <a href="http://api.jquery.com/live">live()</a> for performance reasons.</p>
+	
+	
+	<h3>Debugging</h3>
+	
+	<p>Even with the best of validators, inevitably browser quirks will cause issues. There are several invaluable tools which will help to refine code integrity and loading speed. It is important that you have all of these tools available to you, despite the browser you primarily use for development. We recommend developing for Firefox and Safari first, then Google Chrome and Opera, with additional tweaks via conditional comments just for Internet Explorer. The following is a list of helpful debuggers and speed analyzers...</p>
 	
 	<ul>
 		<li><strong>Firefox</strong>: <a href="http://getfirebug.com/">Firebug</a>, <a href="http://code.google.com/speed/page-speed/">Page Speed</a>, <a href="http://developer.yahoo.com/yslow/">YSlow</a></li>
@@ -234,25 +236,25 @@
 	</ul>
 	
 
-	<h3>Patrones para mejor JavaScript</h3>
+	<h3>Patterns for better JavaScript</h3>
 
 	<ul>
-		<li>Escribir código fácil de mantener</li>
-		<li>Patrón Single var</li>
-		<li>Elevado (Hoisting): Un problema con vars dispersas</li>
-		<li>(No) Aumentar prototipos ya incorporados</li>
-		<li>Evitar el typecasting implícito</li>
-		<li>Evitar eval()</li>
-		<li>Numerar las conversiones con parseInt()</li>
-		<li>Ubicación de la llave de apertura</li>
-		<li>Nombrar los constructores con primera letra en mayúsculas</li>
-		<li>Escribir comentarios</li>
-		<li>Evitar void</li>
-		<li>Evitar la instrucción with </li>
-		<li>Evitar la instrucción continue</li>
-		<li>Evitar los operadores bit a bit si es posible</li>
+		<li>Writing Maintainable Code</li>
+		<li>Single var Pattern</li>
+		<li>Hoisting: A Problem with Scattered vars</li>
+		<li>(Not) Augmenting Built-in Prototypes</li>
+		<li>Avoiding Implied Typecasting</li>
+		<li>Avoiding eval()</li>
+		<li>Number Conversions with parseInt()</li>
+		<li>Opening Brace Location</li>
+		<li>Capitalizing Constructors</li>
+		<li>Writing Comments</li>
+		<li>Avoid void</li>
+		<li>Avoid with Statement</li>
+		<li>Avoid continue Statement</li>
+		<li>Avoid Bitwise Operators if possible</li>
 	</ul>
-
-	<p>Stoyan Stefanov cubre eso y más <a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/">en detalle aqui</a>.</p>
+	
+	<p>Stoyan Stefanov covers these and more <a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/">in detail here</a>.</p>
 	
 </section>

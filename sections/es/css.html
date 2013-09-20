@@ -4,59 +4,59 @@
 <section id="css">
 
 	<div class="intro has-icon">
-		<img class="icon" src="css/img/icon-curly.png" alt="{}" />
-
+		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
 		<h1>CSS</h1>
-		
-		<p>El segundo componente de una página web es la información de presentación contenida en las Hojas de Estilo en Cascada (<abbr title="Cascading Style Sheets" lang="en">CSS</abbr>). La exitosa implementación de las CSS por parte de los navegadores web le ha otorgado a toda una generación de creadores web un amplio control sobre la apariencia de sus sitios web.</p>
-		
-		<p>Así como la información en una página web es semánticamente descrita en el <a href="#markup">etiquetado HTML</a>, las CSS describen todos los aspectos de presentación de la página a través de una descripción de sus propiedades visuales. El poder de las CSS radica en que estas propiedades pueden mezclarse y combinarse mediante identificadores para controlar el diseño y características visuales de la página a través de la superposición de las reglas de estilo (la "cascada").</p>
+
+		<p>The second component of a web page is the presentation information contained in the Cascading Style Sheet (<abbr title="Cascading Style Sheets">CSS</abbr>.) Web browsers successful implementation of CSS has given a whole generation of web authors site-wide control over the look and feel of their web sites.</p>
+
+		<p>Just as the information on a web page is semantically described in the <a href="#markup">HTML Markup</a>, CSS describes all presentation aspects of the page via a description of its visual properties. CSS is powerful in that these properties are mixed and matched via identifiers to control the page's layout and visual characteristics through the layering of style rules (the "cascade").</p>
 	</div>
 
-	<h3>Principios Generales de Uso</h3>
-	
+	<h3>General Coding Principles</h3>
+
 	<ul>
-		<li>Añada las CSS mediante archivos externos, minimizando el número de archivos, de ser posible. Deben estar siempre en el HEAD del documento.</li>
-		<li>Utilice la etiqueta LINK para incluirlas, <a href="http://blog.amodernfable.com/2008/01/21/thoughts-on-linking-to-stylesheets/">nunca use @import.</a>
-	
-			<figure class="preCode">Incluir una hoja de estilos</figure>
+		<li>Add CSS through external files, minimizing the # of files, if possible. It should always be in the HEAD of the document.</li>
+		<li>Use the LINK tag to include, <a href="http://blog.amodernfable.com/2008/01/21/thoughts-on-linking-to-stylesheets/">never the @import.</a>
+
+			<figure class="preCode">Including a stylesheet</figure>
 			<textarea class="brush:html">
 				<link rel="stylesheet" type="text/css" href="myStylesheet.css" />
 			</textarea>
-	
-			<figure class="preCode">No utilice estilos en línea</figure>
+
+			<figure class="preCode">Don't use inline styling</figure>
 			<textarea class="brush:html">
-				<p style="font-size: 12px; color: #FFFFFF">Esta es una forma errónea, afirmo.</p>
+				<p style="font-size: 12px; color: #FFFFFF">This is poor form, I say</p>
 			</textarea>
-			
+
 			</li>
 
-		<li>No incluya estilos en línea en el documento, ni mediante la etiqueta style ni directamente en los elementos. Es más difícil hacer seguimiento a estas reglas de estilo.</li>	
-		<li>Utilice un archivo de reinicialización de CSS (como el presente en H5BP o el <a href="http://meyerweb.com/eric/tools/css/reset/">Reinicializador de Eric Meyer</a>) para neutralizar la extrañas diferencias entre los navegadores.</li>
-		<li>Use un archivo de normalización de fuentes como <a href="http://developer.yahoo.com/yui/fonts/">YUI fonts.css</a></li>	
-		<li>Lo elementos que ocurren sólo una vez dentro de un documento deben utilizar ID, de lo contrario, utilice clases.</li>
-		<li>Comprenda <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">la cascada y la especificidad de selectores</a>, de manera que pueda escribir código muy conciso y eficaz.</li>
-		<li>Use selectores optimizados para la velocidad. Cuando sea posible, evite selectores CSS costosos. Por ejemplo, evite el selector comodín * y no califique selectores de ID (por ejemplo, <code>div#myid</code>) o selectores de clase (por ejemplo, <code>table.results</code>.) Esto es especialmente importante en aplicaciones web donde la velocidad es de suma importancia y puede haber miles o incluso decenas de miles de elementos del DOM. Más información sobre <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">cómo escribir CSS eficientes en el MDC</a>.</li>
+		<li>Don't include styles inline in the document, either in a style tag or on the elements. It's harder to track down style rules.</li>
+		<li>Use <a href="http://necolas.github.com/normalize.css/">normalize.css</a> to make rendering more consistent across browsers.</li>
+		<li>Use a font-normalization file like <a href="http://developer.yahoo.com/yui/fonts/">YUI fonts.css</a></li>
+		<li>Elements that occur only once inside a document should use IDs, otherwise, use classes.</li>
+		<li>Understand <a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">cascading and selector specificity</a> so you can write very terse and effective code.</li>
+		<li>Write selectors that are optimized for speed. Where possible, avoid expensive CSS selectors. For example, avoid the * wildcard selector and don't qualify ID selectors (e.g. <code>div#myid</code>) or class selectors (e.g. <code>table.results</code>.)  This is especially important with web applications where speed is paramount and there can be thousands or even tens of thousands of DOM elements. More on <a href="https://developer.mozilla.org/en/Writing_Efficient_CSS">writing efficient CSS on the MDC</a>.</li>
 	</ul>
-	
-	<h3>Modelo de Caja de las CSS</h3>
 
-	<p>Un profundo conocimiento y comprensión de las CSS y del modelo de caja basado en el navegador es necesario para conquistar los fundamentos de la maquetación con CSS.</p>
-	
+	<h3>CSS Box Model</h3>
+
+	<p>Intimate knowledge and understanding of the CSS and browser-based box model is necessary for conquering the fundamentals of CSS layouts.</p>
+
 	<figure class="extra">
-		<img src="img/box_model.png" alt="Modelo de Caja de las CSS" title="Modelo de Caja de las CSS" />
-		<figcaption>Esquema del <small>Modelo de caja de las CSS en 3D</small> por <a href="http://hicksdesign.co.uk/boxmodel/">Jon Hicks</a>.</small></figcaption>
+		<img src="img/box_model.png" alt="CSS Box Model" title="CSS Box Model" />
+		<figcaption><small>3D CSS Box Model</small> diagram by <a href="http://hicksdesign.co.uk/boxmodel/">Jon Hicks</a>.</small></figcaption>
 	</figure>
-	
-	<h3>Validación de las CSS</h3>
-	
-	<p>Normalmente, nosotros no usamos el <a href="http://jigsaw.w3.org/css-validator/">Validador del W3C</a>.</p>
-	
-	
-	<h3>Formateado de las CSS</h3>
-	
-	<p>Como mínimo, coloque las CSS con selectores en una línea y cada propiedad en su propia línea. A las declaraciones se les aplica sangría.</p>
-	<p>Como una mejora a ese estilo, añada 2 o 4 espacios a los estilos secundarios o relacionados. Esto permite una exploración y organización jerárquica y hace una hoja de estilos más fácil de leer (para algunas personas).</p>
+
+	<h3>CSS Validation</h3>
+
+	<p>We typically don't use the <a href="http://jigsaw.w3.org/css-validator/">W3C validator</a>.</p>
+
+
+	<h3>CSS Formatting</h3>
+
+	<p>At minimum, format CSS with selectors on one line and each property on its own line. The declarations are indented. </p>
+	<p>As an enhancement to that style, related or child styles and additional 2 or 4 spaces. That allows for hierarchical scanning and organization and makes (for some people) an easier-to-read style sheet.</p>
+	<p>Also, if you specify multiple selectors, it's a good idea to start each on new line. This prevents lines from growing long and improves readability as well as version control workflow.</p>
     <textarea class="brush:css">
     .post-list li a{
 		color:#A8A8A8;
@@ -65,108 +65,109 @@
         	color:#000;
         	text-decoration:none;
      	}
-     	.post-list li .author a, .post-list li .author a:hover{
+     	.post-list li .author a,
+     	.post-list li .author a:hover{
         	 color:#F30;
        		 text-transform:uppercase;
      	}
     </textarea>
-    <p>Para entornos de múltiples autores, deben evitarse las CSS de una sola línea, ya que pueden causar problemas con el control de versiones.</p>
-	<h4>Alfabetizado</h4>
-    <p>Si está obsesionado con el rendimiento, al <a href="http://www.barryvan.com.au/2009/08/css-minifier-and-alphabetiser/">alfabetizar las propiedades CSS aumenta las probabilidades de que grandes patrones repetibles se hagan presentes para ayudar en la compresión GZIP</a>.</p> 
+    <p>For multiple author environments, single line CSS should be avoided because it can cause issues with version control. </p>
+	<h4>Alphabetize</h4>
+    <p>If you're performance obsessed <a href="http://www.barryvan.com.au/2009/08/css-minifier-and-alphabetiser/">alphabetizing CSS properties increases the odds of larger repeatable patterns being present to aid in GZIP compression</a>. </p>
 <h3>Classes vs. IDs</h3>
-	
-	<p>Sólo debe asigar un atributo ID a los elementos si son únicos. Debe aplicarse a ese elemento única y exclusivamente. Las clases se pueden aplicar a varios elementos que comparten las mismas propiedades de estilo. Las cosas que deben verse y funcionan de la misma manera pueden tener el mismo nombre de clase.</p>
-	
+
+	<p>You should only give elements an ID attribute if they are unique. They should be applied to that element only and nothing else. Classes can be applied to multiple elements that share the same style properties. Things that should look and work in the same way can have the same class name.</p>
+
 	<textarea class="brush:html">
-		<ul id="categorias">
-			<li class="item">Categoría 1</li>
-			<li class="item">Categoría 2</li>
-			<li class="item">Categoría 3</li>
+		<ul id="categories">
+			<li class="item">Category 1</li>
+			<li class="item">Category 2</li>
+			<li class="item">Category 3</li>
 		</ul>
 	</textarea>
-	
-	<h3>Convenciones de Nombre para los Selectores</h3>
-	
-	<p>Siempre es preferible asignar un nombre a algo, ya sea un ID o una clase, por la naturaleza de <strong>lo que es</strong> en lugar de <strong>como se ve</strong>. Por ejemplo, un nombre de clase de <code>textoGrandeAzul</code> para una nota especial en una página no tiene ningún sentido si se ha cambiado a un texto pequeño de color rojo. Utilizar una convención más inteligente como <code>textoNota</code> es mejor, porque cuando cambia el estilo visual ésta aún tiene sentido.</p>
-	
-	
-	<h3>Selectores</h3>
-	
-	<p>La especificación <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">Selectores CSS Nivel 3</a> presenta un nuevo conjunto de <a href="http://www.w3.org/TR/css3-selectors/#selectors">Selectores CSS</a> que son sumamente útiles para la mejor selección de elementos.</p>
-	
-	
-	<h4>Pseudoclasses</h4>
-	
-	<p>Las <a href="http://www.w3.org/TR/css3-selectors/#pseudo-classes">Pseudoclases</a> le permiten aplicar estilos dinámicamente al contenido. Algunas pseudoclases han existido desde las CSS1 (<code>:visited, :hover</code>, etc.) y las CSS2 (<code>:first-child, :lang</code>). Con las llegada de las CSS3, 16 nuevas pseudoclases se han agregado a la lista y son especialmente útiles para aplicar estilos a contenido dinámico. <a href="http://www.smashingmagazine.com/2011/03/30/how-to-use-css3-pseudo-classes/">Aprenda a utilizar pseudoclases en profundidad</a>.</p>
-	
-	
-	<h4>Combinadores y Selectores de Atributo</h4>
-	
-	<p>Los <a href="http://www.w3.org/TR/css3-selectors/#combinators">Combinadores</a> proporcionan métodos abreviados para seleccionar elementos que son elementos descendientes, elementos secundarios o hermanos de un elemento.</p>
-	
-	<p>Los <a href="http://www.w3.org/TR/css3-selectors/#attribute-selectors">Selectores de Atributo</a> son excelentes para encontrar elementos que tienen un atributo específico y/o un valor específico. Conocer acerca de expresiones regulares ayuda con los selectores de atributos.</p>
 
-	
-	
-<h4>Especificidad</h4>
-	
-	<p>Los navegadores <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">calculan la especificidad de un selector</a> para determinar qué regla debe aplicarse. Si dos selectores se aplican al mismo elemento, la que tiene <strong>mayor especificidad gana</strong>.</p>
-	
-	<p>las IDs tienen mayor especificidad que los selectores de atributo, y los selectores de clase tienen una especificidad mayor que cualquier número de selectores de elemento. Intente siempre usar IDs para aumentar la especificidad. Hay veces cuando podemos intentar aplicar una regla CSS a un elemento y no funciona independientemente de lo que intentemos. Esto es probable debido a que la especificidad del selector utilizado es inferior a otro y las propiedades del mayor tienen precedencia sobre las que desea aplicar. Esto es más común cuando trabaja con hojas de estilos más grandes y complejas. Por lo general, no es un gran problema en proyectos más pequeños.</p>
-	
-	<h5>Calculando la especificidad</h5>
-	
-	<p>Cuando trabaja con una hoja de estilos grande y compleja ayuda saber cómo se calcula el valor de la especificidad del selector, para ahorrarle tiempo y hacer más eficientes sus selectores.</p>
-	
-	<p>La especificidad se calcula contando los diversos componentes de sus estilos CSS y expresándolo en una forma (a, b, c, d).</p>
-	
+	<h3>Naming Conventions for Selectors</h3>
+
+	<p>It is always preferable to name something, be it an ID or a class, by the nature of <strong>what it is</strong> rather than by <strong>what it looks like</strong>. For instance, a class name of <code>bigBlueText</code> for a special note on a page is quite meaningless if it has been changed to have a small red text color. Using a more intelligent convention such as <code>noteText</code> is better because when the  visual style changes it still makes sense.</p>
+
+
+	<h3>Selectors</h3>
+
+	<p>The <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">CSS Selectors Level 3</a> specification introduces a whole new set of <a href="http://www.w3.org/TR/css3-selectors/#selectors">CSS Selectors</a> that are extremely useful for better selection of elements.</p>
+
+
+	<h4>Pseudo-classes</h4>
+
+	<p><a href="http://www.w3.org/TR/css3-selectors/#pseudo-classes">Pseudo-classes</a> enable you to dynamically style content. Some pseudo-classes have existed since CSS1 (<code>:visited, :hover</code>, etc.) and CSS2 (<code>:first-child, :lang</code>). As of CSS3, 16 new pseudo-classes have been added to the list and are especially useful for styling dynamic content. <a href="http://www.smashingmagazine.com/2011/03/30/how-to-use-css3-pseudo-classes/">Learn how to use pseudo-classes in-depth</a>.</p>
+
+
+	<h4>Combinators &amp; Attribute Selectors</h4>
+
+	<p><a href="http://www.w3.org/TR/css3-selectors/#combinators">Combinators</a> provide shortcuts for selecting elements that are a descendant element, a child element, or an element's sibling.</p>
+
+	<p><a href="http://www.w3.org/TR/css3-selectors/#attribute-selectors">Attribute Selectors</a> are great for finding elements that have a specific attribute and/or specific value. Knowledge of regular expressions helps with attribute selectors. </p>
+
+
+
+<h4>Specificity</h4>
+
+	<p>Browsers <a href="http://www.w3.org/TR/2009/PR-css3-selectors-20091215/">calculate a selector's specificity</a> to determine which CSS rule should apply. If two selectors apply to the same element, the one with the <strong>higher specificity wins</strong>.</p>
+
+	<p>IDs have a higher specificity than attribute selectors do, and class selectors have higher specificity than any number of element selectors. Always try to use IDs to increase the specificity. There are times when we may try to apply a CSS rule to an element and it does not work no matter what we try. This is likely because the specificity of the selector used is lower than another one and the properties of the higher one are taking precedence over those you want to apply. This is more common in working with larger more complex stylesheets. It isn't a big issue with smaller projects usually.</p>
+
+	<h5>Calculating specificity</h5>
+
+	<p>When working with a large and complex stylesheet it helps to know how to calculate the value of a selector's specificity, to save you time and to make your selectors more efficient.</p>
+
+	<p>Specificity is calculated by counting various components of your CSS and expressing them in a form (a,b,c,d).</p>
+
 	<ul>
-		<li>Elemento, Pseudoelemento: d = 1 – (0,0,0,1)</li>
-		<li>Clase, Pseudoclase, Atributo: c = 1 – (0,0,1,0)</li>
+		<li>Element, Pseudo Element: d = 1 – (0,0,0,1)</li>
+		<li>Class, Pseudo class, Attribute: c = 1 – (0,0,1,0)</li>
 		<li>Id: b = 1 – (0,1,0,0)</li>
-		<li>Estilo en línea: a = 1 – (1,0,0,0)</li>
+		<li>Inline Style: a = 1 – (1,0,0,0)</li>
 	</ul>
-	
-	<p>Sin embargo, sería mejor utilizar una calculadora de especificidad.</p>
-	
+
+	<p>However, it may be better to use a specificity calculator.</p>
+
 	<ul>
-		<li><a href="">Calculadora de Especificidad</a></li>
-		<li><a href="http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">Algunas cosas que debería saber sobre la especificidad</a></li>
-		<li><a href="http://www.brunildo.org/test/IEASpec.html#a">Errores de especificidad de IE</a></li>
+		<li><a href="http://specificity.keegan.st/">Specificity Calculator</a></li>
+		<li><a href="http://www.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/">Some things you should know about specificity</a></li>
+		<li><a href="http://www.brunildo.org/test/IEASpec.html#a">IE Specificity bugs</a></li>
 	</ul>
-	
-	<p>Utilizar <code>!important</code> reemplaza toda especificidad sin importar cuán alta sea. Nos gusta evitar utilizarla por esta razón. La mayoría de las veces no es necesaria. Incluso si necesita reemplazar un selector en una hoja de estilos a la que no tiene acceso, normalmente hay formas de reemplazarlo sin usar !important. Evite utilizarla si es posible.</p>
+
+	<p>Using <code>!important</code> overrides all specificity no matter how high it is. We like to avoid using it for this reason. Most of the time it is not necessary. Even if you need to override a selector in a stylesheet you don't have access to, there are usually ways to override it without using !important. Avoid using it if possible.</p>
 
 
 	<h3>Pixels vs. Ems</h3>
-	
-	<p>Utilizamos la unidad de medida <code>px</code> para definir <code>font size</code>, ya que ofrece un control absoluto sobre el texto. Nos hemos dado cuenta de que utilizar la unidad <code>em</code> para el tamaño de fuente solía ser popular para adaptarse a que el Internet Explorer 6 no puede cambiar el tamaño de texto basado en píxeles. Sin embargo, todos los principales navegadores (incluyendo <abbr title="Internet Explorer 7">IE7</abbr> e <abbr title="Internet Explorer 8">IE8</abbr>) ahora soportan el cambio de tamaño del texto en unidades de píxeles y/o el zoom de página completa. Dado que <abbr title="Internet Explorer 6">IE6</abbr> en gran medida es considerado obsoleto, es preferible el tamaño en píxeles. Además, el <code>line-height</code> sin unidad establecida es preferible porque no hereda un valor de porcentaje de su elemento principal, sino que en cambio, se basa en un multiplicador del <code>font-size</code>.</p>
-	
-	
-	<figure class="preCode">Correcto</figure>
+
+	<p>We use the <code>px</code> unit of measurement to define <code>font size</code>, because it offers absolute control over text. We realize that using the <code>em</code> unit for font sizing used to be popular, to accommodate for Internet Explorer 6 not resizing pixel based text. However, all major browsers (including <abbr title="Internet Explorer 7">IE7</abbr> and <abbr title="Internet Explorer 8">IE8</abbr>) now support text resizing of pixel units and/or full-page zooming. Since <abbr title="Internet Explorer 6">IE6</abbr> is largely considered deprecated, pixels sizing is preferred. Additionally, unit-less <code>line-height</code> is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the <code>font-size</code>.</p>
+
+
+	<figure class="preCode">Correct</figure>
 	<textarea class="brush:css">
 		#selector {
 			font-size: 13px;
-			line-height: 1.5;  /*  13 * 1.5 = 19.5 ~ Se redondea a 20px. */
+			line-height: 1.5;  /*  13 * 1.5 = 19.5 ~ Rounds to 20px. */
 		}
 	</textarea>
-	
-	<figure class="preCode">Incorrecto</figure>
+
+	<figure class="preCode">Incorrect</figure>
 	<textarea class="brush:css">
-		/*  Equivalente a un font-size de 13px y 20px line-height, pero sólo si el tamaño de texto predeterminado del navegador es 16px. */
+		/*  Equivalent to 13px font-size and 20px line-height, but only if the browser default text size is 16px. */
 		#selector {
 			font-size: 0.813em;
 			line-height: 1.25em;
 		}
 	</textarea>
-	
-	
-	<h3>Errores de Internet Explorer</h3>
-	
-	<p>Inevitablemente, cuando todos los otros navegadores parecen funcionar correctamente, cualquiera/todas las versiones de Internet Explorer presentarán algunos errores absurdos, retrasando el tiempo de implementación. Aunque promovemos la solución de problemas y la construcción de código que funcione en todos los navegadores sin modificaciones especiales, a veces es necesario utilizar comentarios condicionales <code>if IE</code> para establecer ganchos CSS que podamos utilizar en nuestras hojas de estilos. <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Más información en paulirish.com</a></p>
-	
-	
-	<figure class="preCode">Reparando IE</figure>
+
+
+	<h3>Internet Explorer Bugs</h3>
+
+	<p>Inevitably, when all other browsers appear to be working correctly, any and all versions of Internet Explorer will introduce a few nonsensical bugs, delaying time to deployment. While we encourage troubleshooting and building code that will work in all browsers without special modifications, sometimes it is necessary to use conditional <code>if IE</code> comments for CSS hooks we can use in our stylesheets. <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Read more on paulirish.com</a></p>
+
+
+	<figure class="preCode">Fixing IE</figure>
 	<textarea class="brush:html">
 		<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
 		<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
@@ -174,14 +175,14 @@
 		<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 		<!--[if !IE]><!--> <body> <!--<![endif]-->
 	</textarea>
-	
+
 	<textarea class="brush:css">
-		.caja { float: left; margin-left: 20px; }
-		.ie6 .caja { margin-left: 10px; }
+		.box { float: left; margin-left: 20px; }
+		.ie6 .box { margin-left: 10px; }
 	</textarea>
-	
-	<p>Si está utilizando HTML5 (y el <a href="#h5bp">HTML5 Boilerplate</a>) recomendamos el uso de la biblioteca de JavaScript <a href="http://www.modernizr.com/">Modernizr</a> y este patrón:</p>
-	 
+
+	<p>If you're using HTML5 (and the <a href="#h5bp">HTML5 Boilerplate</a>) we encourage the use of the <a href="http://www.modernizr.com/">Modernizer</a> JavaScript library and this pattern:</p>
+
 	<textarea class="brush:html">
 		<!--[if lt IE 7]> <html class="no-js ie ie6" lang="en"> <![endif]-->
 		<!--[if IE 7]>    <html class="no-js ie ie7" lang="en"> <![endif]-->
@@ -189,78 +190,91 @@
 		<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
 		<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
 	</textarea>
-<h3>Notación abreviada</h3>
-	
-	<p>En general, se prefiere la notación abreviada de las CSS debido a su brevedad y la capacidad para luego volver atrás y agregar valores que ya están presentes, como es el caso de margin y padding. Los desarrolladores deben estar conscientes de las siglas <abbr title="Arriba, Derecha, Abajo, Izquierda">ADAI</abbr> (o <abbr title="Top, Right, Bottom, Left" lang="en">TRBL</abbr> por sus siglas en inglés), que indican el orden en el que se definen los lados de un elemento en el sentido de las agujas del reloj: Arriba, Derecha, Abajo, Izquierda. Si <em>bottom</em> no está definido, hereda su valor de <em>top</em>. Asimismo, si <em>left</em> no está definido, hereda su valor de <em>right</em>. Si sólo se define el valor <em>top</em>, todos los lados lo heredan de esa declaración.</p>
-	
-	<p class="normalize">Para más información acerca de como reducir la redundancia de código en las hojas de estilos y usar la notación abreviada de las CSS en general:</p>
-	
+<h3>Shorthand</h3>
+
+	<p>In general, CSS shorthand is preferred because of its terseness, and the ability to later go back and add in values that are already present, such as the case with margin and padding. Developers should be aware of the <abbr title="Top Right Bottom Left">TRBL</abbr> acronym, denoting the order in which the sides of an element are defined, in a clock-wise manner: Top, Right, Bottom, Left. If <em>bottom</em> is undefined, it inherits its value from <em>top</em>. Likewise, if <em>left</em> is undefined, it inherits its value from <em>right</em>. If only the <em>top</em> value is defined, all sides inherit from that one declaration.</p>
+
+	<p class="normalize">For more on reducing stylesheet code redundancy, and using CSS shorthand in general:</p>
+
 	<ul>
 		<li><a href="http://qrayg.com/journal/news/css-background-shorthand">http://qrayg.com/journal/news/css-background-shorthand</a></li>
 		<li><a href="http://sonspring.com/journal/css-redundancy">http://sonspring.com/journal/css-redundancy</a></li>
 		<li><a href="http://dustindiaz.com/css-shorthand">http://dustindiaz.com/css-shorthand</a></li>
 	</ul>
-	
-	<h3>Imágenes</h3>
-	
+
+	<h3>Images</h3>
+
 	<ul>
-		<li>Para imágenes que se repiten, use <a href="http://www.iandevlin.com/blog/2010/03/webdev/fading-issue-with-repeating-background-transparent-image-in-internet-explorer">algo más grande de 1 x 1 píxeles</a></li>
-		<li>Nunca debería utilizar imágenes espaciadoras.</li>
-		<li>Utilice <a href="#_leverage_css_sprites">sprites CSS generosamente</a>. Éstos hacen los estados hover más fáciles, mejoran el tiempo de carga de la página y reducen las emisiones de dióxido de carbono.</li>
-		<li>Normalmente, todas las imágenes deben ser seccionadas con un fondo transparente (PNG8). Todas deben ser recortadas justo en los límites de la imagen.
+		<li>For repeating images, use <a href="http://www.iandevlin.com/blog/2010/03/webdev/fading-issue-with-repeating-background-transparent-image-in-internet-explorer">something larger than 1x1 pixels</a></li>
+		<li>You should never be using spacer images.</li>
+		<li>Use <a href="#_leverage_css_sprites">CSS sprites generously</a>. They make hover states easy, improve page load time, and reduce carbon dioxide emissions.</li>
+
+		<li>Typically, all images should be sliced with a transparent background (PNG8). All should be cropped tightly to the image boundaries.
 			<ul>
-				<li>Sin embargo, el logotipo siempre debe tener un fondo mate y terner algo de relleno antes del corte. (de modo que otras personas puedan hacer hotlink al archivo)</li>
+				<li>However, the logo should always have a background matte and have padding before the crop. (so other people can hotlink to the file)</li>
 			</ul>
 		</li>
 	</ul>
+<h3>Color Management</h3>
+    <ul>
+        <li>Verify that all members on your team have consistent color management settings.</li>
+           <ul>
+               <li>Any given two monitors most likely display the colors differently, but sRGB color profile must be your default.</li>
+               <li>When you open files in Photoshop, pay attention to Color Profile warnings and notify team members when Photoshop is suggesting to convert an image to a different profile.</li>
+			</ul>
+        <li>Never embed a color profile in your images.
+            <ul>
+				<li>When you Save for Web and Devices from Photoshop, be sure to uncheck &quot;Embed Color Profile.&quot;</li>
+			</ul> </li>
+    </ul>
 
 	<hr />
-	
-	<h3>Estilos Generales de Texto y Fuentes</h3>
-	
-	<h4>Encabezados</h4>
-	
+
+	<h3>General Text and Font Styling</h3>
+
+	<h4>Headings</h4>
+
 	<ul>
-		<li>Defina el estilo predeterminado para los encabezados <code>h1-h6</code> incluyendo los encabezados que son enlaces. Es útil declararlos en la parte superior del documento CSS y modificarlos cuando sea necesario para mayor coherencia a través del sitio.</li>
-		<li>Los encabezados deben mostrar una jerarquía que indica los diferentes niveles de importancia de arriba a abajo empezando por h1 con el mayor tamaño de fuente.</li>
-		<li>SEO: Para obtener una idea aproximada de cómo es organizada y leída la jerarquía de su página, utilice la barra de herramientas para desarrolladores a fin de deshabilitar los estilos CSS. Terminará con una vista basada en texto de todas las etiquetas <code>h1-h6</code>, <code>strong</code>, <code>em</code>, etc.</li>
+		<li>Define default styling for <code>h1-h6</code> headings including headings as links. It's helpful to declare these at the top of your CSS document, and modify them with as necessary for consistency across the site.</li>
+		<li>Headings should show a hierarchy indicating different levels of importance from the top down starting with h1 having the largest font size.</li>
+		<li>SEO: To get a rough idea of how your page hierarchy is organized and read, use your Developer Toolbar to disable CSS. You'll end up with a text-based view of all your <code>h1-h6</code> tags, <code>strong</code>, <code>em</code>, etc.</li>
 	</ul>
-	
-	<h4>Enlaces</h4>
-	
+
+	<h4>Links</h4>
+
 	<ul>
-		<li>Los estilos predeterminados para los enlaces deben ser declarados y deben ser diferentes a los estilos del texto principal y con estilos diferentes para el estado hover.</li>
-		<li>Cuando aplique estilos a los enlaces con subrayado, utilice <code>border-bottom</code> y algo de padding con <code>text-decoration: none;</code>. Esto simplemente se ve mejor.</li>
+		<li>Default styles for links should be declared and different from the main text styling, and with differing styles for hover state.</li>
+		<li>When styling links with underlines use <code>border-bottom</code> and some padding with <code>text-decoration: none;</code>. This just looks better.</li>
 	</ul>
 
 	<!-- #### WEB TYPOGRAPHY SECTION #### -->
-	
+
 	<!--========================*\
-	 oh rly?	ya rly!  
+	 oh rly?	ya rly!
 	   \ ___,    ___ /   _,_  no rly?
 	    {O,0}   {-.-}   {o,O} /
 	    |)__)   |)~(|   (~~(|
 	-----"-"-----"-"-----"-"-----,_
 	=========================== -->
 
-	<h2>Tipografía Web</h2>
+	<h2>Web Typography</h2>
 
-	<p>El uso de fuentes y tipos de letra personalizados en la web ha ido creciendo en popularidad en los últimos años. Con un soporte nativo por parte de los navegadores en ascenso y varios servicios y APIs disponibles ahora, existe un impulso real en este espacio. Cada uno de estos enfoques tienen sus propias ventajas y desventajas. Antes de que un proyecto arranque es mejor realizar algo de investigación sobre las limitaciones tecnológicas y de licencias a fin de elegir el enfoque adecuado para el proyecto específico.</p>
+	<p>The use of custom fonts and typefaces on the web has been growing more popular the past few years. with native browser support on the rise and several supporting services and APIs now available there is real momentum in this space. Each of these approaches have their own pros and cons. Before a project kicks off it's best to do research into technology and licensing limitations to choose the proper approach for the specific project.</p>
 
-	<p>Todos estos enfoques tienen inconvenientes en cuanto a código adicional, tiempo de desarrollo y rendimiento (reloj y percibido). Familiarizarse con estos temas y comunicarlo a los demás miembros del equipo y al cliente ahorrará importantes problemas más adelante en el proyecto.</p>
+	<p>All of these approaches have drawbacks in code overhead, development time and performance (clock and perceived). Familiarizing yourself with these issues and communicating them to the other members of the team and to the client will save significant problems later on in the project.</p>
 
-	<p>Aquí encuentra listados algunos métodos populares para incrustar fuentes personalizadas, organizados en orden de nuestra preferencia en su aplicación.</p>
-	
+	<p>Listed here are some popular methods of embed custom fonts, list in the order of our preference for implementation.</p>
+
 	<h3>@font-face</h3>
-	
-	<p>La <a href="http://www.w3.org/TR/2011/WD-css3-fonts-20110324/#font-face-rule">regla @font-face</a> le permite definir fuentes personalizadas. Ésta fue definida inicialmente en la especificación CSS2, pero fue eliminada de la CSS2.1. Actualmente, es un proyecto de recomendación para CSS3.</p>
-	
-	<p>Nuestra primera y preferida elección para personalizar las fuentes en la web es @font-face, simplemente porque es parte del proyecto de trabajo del Módulo de Fuentes de CSS, lo que significa que  seguirá creciendo en popularidad a medida que crece el soporte de los navegadores y su facilidad de uso mejora conforme se vuelve más estable.</p>
-	
-	<p>Por ahora, cuando utiliza <code>@font-face</code> es recomendado declarar el origen para cada formato de la fuente. Esto es importante si desea trabajar con el mayor número de navegadores, aunque no es un requisito para su uso.</p>
-	
-	<p class="normalize">Los formatos de fuente incluidos en la especificación son:</p>
-	
+
+	<p>The <a href="http://www.w3.org/TR/2011/WD-css3-fonts-20110324/#font-face-rule">@font-face at-rule</a> allows you to define custom fonts. It was first defined in the CSS2 specification, but was removed from CSS2.1. Currently, it's a draft recommendation for CSS3.</p>
+
+	<p>Our first and most preferred choice for customizing fonts on the web is @font-face, simply because it is part of the CSS Fonts Module working draft which means it will continue to grow in popularity as browser support grows, and ease of use for it improves as it becomes more stable.</p>
+
+	<p>For now, when using <code>@font-face</code> it's recommended to declare the source for each font format. This is important if you want it to work in the most number of browsers, though it is not a requirement for use.</p>
+
+	<p class="normalize">The font formats included in the specification are:</p>
+
 	<ul>
 		<li><strong>woff</strong>: WOFF (Web Open Font Format)</li>
 		<li><strong>ttf</strong>: TrueType</li>
@@ -268,100 +282,100 @@
 		<li><strong>eot</strong>: Embedded OpenType</li>
 		<li><strong>svg</strong>, <strong>svgz</strong>: SVG Font</li>
 	</ul>
-	
-	<h4>@font-face a prueba de balas</h4>
-	
-	<p>Para mayor compatibilidad con todos los navegadores use la nueva <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax">sintaxis de @font-face a prueba de balas</a> de Fontspring (<em>última versión de 21/02/11</em>).</p>
-	
+
+	<h4>Bulletproof @font-face</h4>
+
+	<p>For full cross-browser compatibility use Fontsprings' new <a href="http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax">bulletproof @font-face syntax</a> (<em>latest version as of 2/21/11</em>).</p>
+
 	<textarea class="brush:css">
 		@font-face {
 			font-family: 'MyFontFamily';
-			src: url('myfont-webfont.eot'); 					/* Modos de compatibilidad con IE9 */
+			src: url('myfont-webfont.eot'); 					/* IE9 Compat Modes */
 			src: url('myfont-webfont.eot?iefix') format('eot'),	/* IE6-IE8 */
-			   url('myfont-webfont.woff') format('woff'),		/* Navegadores modernos */
+			   url('myfont-webfont.woff') format('woff'),		/* Modern Browsers */
 			   url('myfont-webfont.ttf') format('truetype'),		/* Safari, Android, iOS */
-			   url('myfont-webfont.svg#svgFontName') format('svg'); /* iOS más antiguo */
+			   url('myfont-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 			font-weight: <font-weight>;
 			font-style: <font-style>;
 			// etc.
 		}
 	</textarea>
-	
-	<p>Aquí tiene una <a href="http://www.thecssninja.com/demo/css_fontface/">demostración funcional</a> que usa esta versión de implementación.</p>
-	
-	<h4>Compatibilidad con los Navegadores</h4>
-	
-	<p>Safari, <abbr title="Internet Explorer versiones 6-9">IE 6-9</abbr>, <abbr title="Modo de Compatibilidad de Internet Explorer">Modo de Compatibilidad de IE 9</abbr>, Firefox, Chrome, iOS, Android, Opera</p>
-	
-	<h4>Prevenir el Modo de Compatibilidad</h4>
-	
-	<p>A veces <abbr title="Internet Explorer" lang="en">IE</abbr> puede tener una mente propia y cambiará al modo de compatibilidad sin usted saberlo. Incluya lo siguiente en el <code>&lt;head&gt;</code> del sitio para impedir que su sitio sea mostrado usando el modo de compatibilidad:</p>
-	
+
+	<p>Here's a <a href="http://www.thecssninja.com/demo/css_fontface/">working demo</a> using this version of implementation.</p>
+
+	<h4>Cross-Browser Compatibility</h4>
+
+	<p>Safari, <abbr title="Internet Explorer version 6-9">IE 6-9</abbr>, <abbr title="Internet Explorer Compatibility Modes">IE 9 Compatibility Modes</abbr>, Firefox, Chrome, iOS, Android, Opera</p>
+
+	<h4>Prevent Compatibility Mode</h4>
+
+	<p>Sometimes <abbr title="Internet Explorer">IE</abbr> can have a mind of its own and will switch to compatibility mode without you knowing. Include the following in the site <code>&lt;head&gt;</code> to prevent your site from defaulting to compatibility mode:</p>
+
 	<textarea class="brush:html">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	</textarea>
-	
-	<hr />
-	
-	<h4>Consejos para @font-face</h4>
-	
-	<ul>
-		<li>IE 6-8 sólo aceptará una fuente TrueType empaquetada como un EOT.</li>
-		<li>font-weigh y font-style tienen diferentes significados dentro de <code>@font-face</code>. Las declaraciones donde se establece <code>font-weight:bold;</code> significa que ésta es la versión negritas de este tipo de letra, en lugar de aplicar negritas al texto</li>
-		<li><a href="http://paulirish.com/2010/font-face-gotchas/">errores de @font-face</a></li>
-	</ul>
-	
-	<strong>Pros</strong>
-	
-	<ul>
-		<li>Fácil de implementar</li>
-		<li>Gran variedad de APIs</li>
-		<li>Personalizable</li>
-		<li>Fácil de agregar a los elementos</li>
-		<li>No requiere nada además de las CSS</li>
-		<li>Actualmente es parte del proyecto de trabajo del Módulo de Fuentes CSS 3</li>
-	</ul>
-	
-	<strong>Contras</strong>
-	
-	<ul>
-		<li>Soporte de navegadores limitado si se utiliza incorrectamente</li>
-		<li>Algunas versiones antiguas de los navegadores modernos (Chrome, Opera) no siempre la procesan  bien. El texto puede tener bordes dentados. <em>** Yo no he podido confirmar si esto sigue siendo un problema o no.</em></li>
-	</ul>
-	
-	<hr />	
-	
-	<h3>Google WebFonts API y Font Loader</h3>
-	
-	<p>Hay dos opciones disponibles con <a href="https://code.google.com/apis/webfonts/">Google Webfonts</a>. Ambas opciones tienen sus desventajas, por supuesto, pero usarlas puede ser tan bueno como <code>@font-face</code>, todo depende de las necesidades del proyecto.</p>
 
-	
+	<hr />
+
+	<h4>Tips for @font-face</h4>
+
+	<ul>
+		<li>IE 6–8 will only accept a TrueType font packaged as an EOT.</li>
+		<li>font-weight and font-style have different meanings within <code>@font-face</code>.
+			Declarations where <code>font-weight:bold;</code> means this is the bold version of this typeface, rather than apply bold to this text</li>
+		<li><a href="http://paulirish.com/2010/font-face-gotchas/">@font-face gotchas</a></li>
+	</ul>
+
+	<strong>Pros</strong>
+
+	<ul>
+		<li>Easy to implement</li>
+		<li>Large variety of APIs</li>
+		<li>Customizable</li>
+		<li>Easy to add to elements</li>
+		<li>Nothing required besides CSS</li>
+		<li>Is currently part of the working draft of CSS Fonts Module 3</li>
+	</ul>
+
+	<strong>Cons</strong>
+
+	<ul>
+		<li>Limited browser support if used improperly</li>
+		<li>Some older versions of modern browsers (Chrome, Opera) don't always render well. Text can have rough edges. <em>**I have not been able to confirm whether this is still an issue now or not.</em></li>
+	</ul>
+
+	<hr />
+
+	<h3>Google WebFonts API &amp; Font Loader</h3>
+
+	<p>There are two options available with <a href="https://code.google.com/apis/webfonts/">Google Webfonts</a>. Both options have their downsides of course but they can be just as good to use as <code>@font-face</code>, it all depends on a projects needs.</p>
+
 	<h4>Webfonts API</h4>
-	
-	<p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">La API de Google Webfonts</a> hace esencialmente la mismo que <code>@font-face</code>, sólo que hace todo el trabajo duro por usted y le proporciona mayor soporte de navegadores. La desventaja principal de este método es la muy pequeña biblioteca de fuentes que utiliza. Para que funcione todo lo que necesita hacer es incluir la hoja de estilos + el nombre de la fuente.</p>
-	
+
+	<p><a href="https://code.google.com/apis/webfonts/docs/getting_started.html">Google's Webfonts API</a> essentially does the same thing as <code>@font-face</code>, it just does all the hard work for you, providing wider browser support.The major drawback to this method is the very small font library it uses. To make it work all you need to do is include the stylesheet + the font name.</p>
+
 	<textarea class="brush:html">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
 	</textarea>
-	
-	<p class="normalize">Luego, defina un estilo para el selector al que desea aplicar la fuente:</p>
-	
+
+	<p class="normalize">Then define a style for the selector you want to apply the font to:</p>
+
 	<textarea class="brush:css">
 		CSS selector {
 			font-family: 'Font Name', serif;
 		}
 	</textarea>
-	
+
 	<h3>Webfont Loader</h3>
-	
-	<p>Otra opción que Google ofrece es el <a href="https://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> que es una biblioteca JavaScript que le permite un mayor control que la Webfonts API. También puede utilizar múltiples proveedores de fuentes web como TypeKit. Para usarlo incluya el script en su página:</p>
-	
+
+	<p>Another option Google offers is the <a href="https://code.google.com/apis/webfonts/docs/webfont_loader.html">Webfont Loader</a> which is a JavaScript library that allows for more control than the font API does. You can also use multiple webfont providers like Typekit. To use it include the script in your page:</p>
+
 	<textarea class="brush:javascript">
 		<script type="text/javascript">
 			WebFontConfig = { google: { families: [ 'Tangerine', 'Cantarell' ]} };
 			(function() {
 				var wf = document.createElement('script');
-				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + 
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
 						  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
 				wf.type = 'text/javascript';
 				wf.async = 'true';
@@ -370,9 +384,9 @@
 			})();
 		</script>
 	</textarea>
-	
-	<p class="normalize">Incluir el archivo webfont.js de esta manera es más rápido si no está usando ya las API de Ajax. De lo contrario debe utilizar esto:</p>	
-	
+
+	<p class="normalize">Including the webfont.js file this way is faster if not already using the Ajax APIs. Otherwise you should use this:</p>
+
 	<textarea class="brush:javascript">
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
@@ -382,33 +396,33 @@
 			});
 		</script>
 	</textarea>
-	
-	<p>Al utilizar el Webfont Loader tiene más posibilidades de personalizar las cosas, incluyendo el uso de más fuentes, no sólo las de la biblioteca de Google Webfont que no es muy grande. Sin embargo, requiere cargar JavaScript, sacrificando una cosa por otra.</p>
-	
+
+	<p>By using the Webfont Loader you have more ability to customize things including the use of more fonts, not just those in the Google Webfont library which is not large. However, it then requires you to load JavaScript, sacrificing one thing for another.</p>
+
 	<strong>Pros</strong>
-	
+
 	<ul>
-		<li>Muy fácil de implementar</li>
-		<li>Amplio soporte de navegadores</li>
-		<li>Puede combinarse con Typekit</li>
-		<li>Personalizable al usar el cargador de fuentes</li>
-		<li>La API hace lo mismo que <code>@font-face</code></li>
+		<li>Very easy to implement</li>
+		<li>Wide browser support</li>
+		<li>Can be combined with Typekit</li>
+		<li>Customizable when using the font loader</li>
+		<li>API does the same thing as <code>@font-face</code></li>
 	</ul>
 
-	<strong>Contras</strong>
-	
+	<strong>Cons</strong>
+
 	<ul>
-		<li>La biblioteca de fuentes es muy pequeña si utiliza la Webfont API</li>
-		<li>Usar el Webfont Loader requiere el uso de JavaScript para que funcione</li>
-		<li>La mayoría de los navegadores cargará el resto de la página primero, dejando un espacio en blanco donde debería estar el texto, o de lo contrario mostrará la opción de reserva si existe alguna, hasta que la página se cargue completamente.</li>
-		<li>Algunas fuentes de la biblioteca Webfont se muestran mal en Windows</li>
+		<li>Very small font library if using the font API</li>
+		<li>Using the Webfont Loader requires the use of JavaScript to work</li>
+		<li>Most browsers will load the rest of the page first, leaving a blank space where the text would be, or otherwise show the fallback option if one exists, until the page fully loads.</li>
+		<li>Some fonts in the webfont library render poorly on Windows</li>
 	</ul>
 
 	<hr />
-	
+
 	<h3>Cufon</h3>
-	
-	<p>Si elige utilizar Cufon, se recomienda que utilizar la <a href="http://cufon.shoqolate.com/js/cufon-yui.js">versión comprimida de Cufon</a>. Necesitará convertir su fuente utilizando el <a href="http://cufon.shoqolate.com/generate/">generador</a>.</p>
+
+	<p>If you choose to use Cufon, it is highly recommended you use the <a href="http://cufon.shoqolate.com/js/cufon-yui.js">Cufon compressed version</a>. You will need to convert your font using the <a href="http://cufon.shoqolate.com/generate/">generator</a>.</p>
 
 	<textarea class="brush:javascript">
 		<script src="cufon-yui.js" type="text/javascript"></script>
@@ -418,112 +432,117 @@
 			Cufon.replace('#sub1'); 	// Requires a selector engine for IE 6-7
 		</script>
 	</textarea>
-	
-	<p>Se recomienda utilizar Cufon con moderación ya que puede causar mucha sobrecarga si se aplica a una gran cantidad de texto. Para más información visite el <a href="https://github.com/sorccu/cufon/wiki/">Wiki de Cufon</a>.</p>
-	
+
+	<p>We recommend using Cufon sparingly since it can cause a lot of overhead if applied to a large amount of text. For more info visit the <a href="https://github.com/sorccu/cufon/wiki/">Cufon Wiki</a>.</p>
+
+
 	<strong>Pros</strong>
-	
+
 	<ul>
-		<li>Amplio soporte de navegadores</li>
-		<li>Se muestra bien en los navegadores soportados</li>
-		<li>Personalizable</li>
-		<li>Fácil de implementar</li>
+		<li>Wide browser support</li>
+		<li>Renders well in supported browsers</li>
+		<li>Customizable</li>
+		<li>Easy to implement</li>
 	</ul>
-	
-	<strong>Contras</strong>
-	
+
+
+	<strong>Cons</strong>
+
 	<ul>
-		<li>Requiere el uso de JS para funcionar</li>
-		<li>No puede seleccionarse el texto que lo utiliza</li>
-		<li>No pueden utilizarse todos los caracteres</li>
-		<li>La personalización puede ser dolorosa</li>
-		<li>No siempre es fácil aplicarlo a varios elementos, especialmente cuando se agregan efectos como hovers</li>
+		<li>Requires use of JS to work</li>
+		<li>Text can't be selected that uses it</li>
+		<li>Not all characters can be used</li>
+		<li>Customization can be a pain</li>
+		<li>Not always easy to apply to multiple elements, especially when adding effects like hovers</li>
 	</ul>
-	
+
 	<hr />
-	
+
 	<h3>Typekit</h3>
-	
-	<p>Utilizar <a href="https://typekit.com">Typekit</a> tiene sus ventajas y no debería ser ignorado por completo a la hora de elegir el método a utilizar para añadir fuentes personalizadas a un sitio web. Cuenta con una plataforma de integración fuerte y es un servicio escalable y popular. Se puede utilizar con Google WebFonts y se puede agregar fácilmente a WordPress, Posterous, Typepad, y otros sitios manejados por CMSes similares.</p>
 
-	<p>Sin embargo, la plena utilización de <a href="https://typekit.com/plans">TypeKit no viene sin un costo</a>. Si usted necesita usarlo en más de 2 sitios o en un sitio que recibe una gran cantidad de pageviews tendrá que pagar un costo anual de $49.99, y para los sitios con más de un millón de pageviews le cuesta el doble. No obstante, es probable que tenga el dinero para cubrir el costo si usted está recibiendo más de un millón de pageviews. Si no, entonces puede que usted deba reconsiderar su modelo de negocios.</p>
-	
-	
+	<p>Using <a href="https://typekit.com">Typekit</a> has its advantages and shouldn't be completely disregarded when choosing which method to use for adding custom fonts to a web site. It has strong platform integration and is a scalable and popular service. It can be used with Google Webfonts and is easily added to WordPress, Posterous, Typepad, and other similar CMS powered sites.</p>
+
+	<p>However, full use of <a href="https://typekit.com/plans">Typekit doesn't come without a cost</a>. If you need to use it on more than 2 sites or on a site that gets a high amount of pageviews you will need to pay an annual cost of $49.99, and for sites with a million+ pageviews it costs twice as much. Though, you probably have the money to cover the cost if you're getting over a million pageviews. If not then you may want to rethink your business model.</p>
+
+
 	<strong>Pros</strong>
-	
+
 	<ul>
-		<li>Gran biblioteca de fuentes, incluyendo fuentes de Adobe</li>
-		<li>Fácil implementación</li>
-		<li>Integración con la Webfont API de Google y con plataformas de blogs</li>
-		<li>El plan gratuito tiene límites, pero no caduca</li>
-	</ul>	
-	
-	<strong>Contras</strong>
-	
+		<li>Large font library, including Adobe fonts</li>
+		<li>Easy implementation</li>
+		<li>Google Webfont API and blogging platform integration</li>
+		<li>Free plan has limits but doesn't expire</li>
+	</ul>
+
+
+	<strong>Cons</strong>
+
 	<ul>
-		<li>Requiere Javascript para utilizarlo</li>
-		<li>Accesso a biblioteca de fuentes limitada sin pagar</li>
-		<li>Los planes libres y más baratos sólo permiten el uso en 1-2 sitios web y 2-5 fuentes por sitio</li>
-		<li>Tiene que pagar para usarlo en más de 1 sitio</li>
+		<li>Requires JavaScript to use</li>
+		<li>Limited font library access without paying</li>
+		<li>Free and cheapest plans only allow use on 1-2 web sites and 2-5 fonts per site</li>
+		<li>You have to pay to use it on more than 1 site</li>
 	</ul>
 
 	<hr />
-	
+
 	<h3>Scalable Inman Flash Replacement (sIFR)</h3>
-	
-	<p>No le recomendamos que utilice este método, pero debido a que es ampliamente utilizado sentimos que era necesario incluirlo, por lo que puede tomar una decisión bien informada al elegir el método que debe usar con las fuentes web personalizadas.</p>
 
-	<p>A pesar de su gran popularidad entre los diseñadores web, así como su decente soporte en la mayoría de los navegadores, los inconvenientes en su uso superan a su conveniencia. La razón más grande y más obvia para no utilizar sIFR es el hecho de que utiliza Flash. Además, para que el flash funcione, se requiere JavaScript y las secuencias de comandos deben cargarse antes que el texto en el que lo use sea visible en la página. Sin mencionar que aumenta el tiempo de carga de la página y puede causar que un sitio lento se haga aún más lento.</p>
-	
-	<p class="normalize">Hagamos los cálculos aqui.</p>
-	
+	<p>We do not recommend that you use this method but because of how widely used it is we felt it was necessary to include so you could make a properly informed decision when choosing which method to go with for customized webfonts.</p>
+
+	<p>Despite its wide popularity among web designers, and its decent support in most browsers, the drawbacks to its use outweigh its convenience. The biggest and most obvious reason to not use sIFR is the fact that it uses Flash. Plus, in order for the Flash to even work, it requires JavaScript and the scripts must be loaded before the text you use it on is visible on the page. Not to mention that it increases page load time, and can cause a slow site to be even slower.</p>
+
+	<p class="normalize">We'll let you do the math here.</p>
+
 	<strong>Pros</strong>
-	
+
 	<ul>
-		<li>Se puede seleccionar el texto</li>
-		<li>Soporte en la mayoría de los navegadores</li>
-		<li>Se muestra bien en los navegadores soportados</li>
+		<li>Text can be selected</li>
+		<li>Support on most browsers</li>
+		<li>Renders okay on supported browsers</li>
 	</ul>
-	
-	<strong>Contras</strong>
-	
+
+
+	<strong>Cons</strong>
+
 	<ul>
-		<li>Utiliza Flash</li>
-		<li>Requiere Javascript para el Flash funcione</li>
-		<li>¡Es Flash!</li>
-		<li>El texto no aparece hasta que el script no carga</li>
-		<li>... y es Flash...</li>
+		<li>It uses Flash</li>
+		<li>Requires JavaScript for the Flash to work</li>
+		<li>It's Flash!</li>
+		<li>Text doesn't appear until the scripts load</li>
+		<li>...and it's Flash...</li>
 	</ul>
-	
+
 	<hr />
 
-	
-	<h3>Licencias de Fuentes</h3>
-	
-	<p>A pesar de que puede transformar cualquier fuente en un archivo de fuente web, todavía debe asegurarse de que es legalmente correcto para poder hacerlo. Muchos creadores de fuentes han actualizado sus condiciones para especificar cómo pueden utilizarse sus fuentes en la web. Vea <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=UNESCO_Font_Lic">Detalles de Protección y Licencias de Fuentes</a> para obtener más información.</p>
+
+	<h3>Font Licensing</h3>
+
+	<p>Even though you can transform just about any font into a web font file, you should still make sure it is legally okay for you to do so. Many foundries have updated their conditions to specify how their fonts can be used on the web. View <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&item_id=UNESCO_Font_Lic">Font Licensing and Protection Details</a> for more information.</p>
 
 	<hr />
-	
-	<h3>Especificaciones y Formatos de Archivo de Fuente</h3>
-	
+
+	<h3>Specifications &amp; Font File Formats</h3>
+
 	<ul>
-		<li><a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#font-descriptions">Fuentes CSS 2</a> &ndash; Mayo 1998 (Obsoleto)</li>
-		<li><a href="http://www.w3.org/TR/css3-fonts/">Fuentes CSS 3</a> &ndash; Borrador de Trabajo 2009 </li>
-		<li><a href="http://www.w3.org/TR/css3-fonts/">Módulo de Fuentes CSS</a> &ndash; Borrador de Trabajo del W3C para Marzo 2011</li>
-		<li><a href="http://www.w3.org/TR/WOFF/">Formato de Fuentes WOFF</a> &ndash; Borrador de Trabajo 2010</li>
-		<li><a href="http://www.w3.org/TR/SVG/fonts.html">Formato de Fuentes SVG</a></li>
-		<li><a href="http://www.w3.org/Submission/EOT/">Formato de Fuentes Embedded Open Type (EOT)</a></li>
-		<li><a href="http://www.microsoft.com/typography/otspec/">Especificación de Microsoft Open Type</a></li>
-		<li><a href="http://www.adobe.com/devnet/opentype/afdko/topic_feature_file_syntax.html#9.e">Especificación de Archivos de Característica OpenType</a> </li>
-		<li><a href="http://developer.apple.com/fonts/TTRefMan/">Referencia de True Type de Apple</a> </li>
+		<li><a href="http://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#font-descriptions">CSS 2 Fonts</a> &ndash; May 1998 (Obsolete)</li>
+		<li><a href="http://www.w3.org/TR/css3-fonts/">CSS 3 Fonts</a> &ndash; Working Draft 2009 </li>
+		<li><a href="http://www.w3.org/TR/css3-fonts/">CSS Fonts Module</a> &ndash; W3C Working Draft March 2011</li>
+		<li><a href="http://www.w3.org/TR/WOFF/">WOFF Font Format</a> &ndash; Working Draft 2010</li>
+		<li><a href="http://www.w3.org/TR/SVG/fonts.html">SVG Font Format</a></li>
+		<li><a href="http://www.w3.org/Submission/EOT/">Embedded Open Type (EOT) File Format</a></li>
+		<li><a href="http://www.microsoft.com/typography/otspec/">Microsoft Open Type Specification</a></li>
+		<li><a href="http://www.adobe.com/devnet/opentype/afdko/topic_feature_file_syntax.html#9.e">OpenType Feature File Specification</a> </li>
+		<li><a href="http://developer.apple.com/fonts/TTRefMan/">Apple True Type Reference</a> </li>
 	</ul>
 
-	<!-- <h3>Use CSS3</h3>
-	
-	<p>Puede hacer un montón de cosas nuevas con las funciones agregadas en la especificación de CSS3, muchas de las cuales no son todavía totalmente soportadas por todos los principales navegadores. Esto no significa que no puedan utilizarse hoy. Para las cosas que no son soportadas hay bibliotecas de reserva u otros 'polyfills' que puede utilizar para rellenar los agujeros donde los navegadores pueden carecer de algún tipo de soporte  de una nueva característica.</p>
-	
-	<p>También hay propiedades específicas de los navegadores o prefijos que se pueden utilizar para aplicar estilos a las cosas. Le recomendamos que utilice <a href="http://prefixr.com">Prefixr.com</a> para asegurarse de incluir todas las propiedades de navegador con prefijos por el bien del soporte multi-navegador.</p> 
+	<h3>Use CSS3</h3>
 
-	-->
-	
+	<p>You can do a lot of new things with the added features in the CSS3 spec, many of which are not yet fully supported by all the major browsers. That doesn't
+	mean they can't be used today. For the things that aren't supported there are fallback libraries or other 'polyfills' which you can use to fill in the holes where
+	browsers may be lacking some support of a new feature.</p>
+
+	<p>There are also browser specific properties or prefixes that can be used to style things too. We recommend using <a href="http://prefixr.com">Prefixr.com</a> to
+	make sure you include all the different prefixed browser properties for the sake of cross-browser support.</p>
+
 </section>

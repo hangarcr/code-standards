@@ -1,9 +1,21 @@
 /*global module:false*/
 module.exports = function(grunt) {
     var metas = {
-        en: {
-            path: 'sections/en/',
-            files: ['_front_matter.txt', 'general.html', 'markup.html', 'css.html', 'javascript.html', 'performance.html', 'browsers.html', 'seo.html', 'codeReviews.html', 'appendices.html', 'revisionHistory.html']
+        es: {
+            path: 'sections/es/',
+            files: [
+              '_front_matter.txt', 
+              'general.html', 
+              // 'markup.html', 
+              // 'css.html', 
+              // 'javascript.html', 
+              // 'performance.html', 
+              // 'browsers.html', 
+              // 'seo.html', 
+              // 'codeReviews.html', 
+              // 'appendices.html', 
+              // 'revisionHistory.html'
+            ]
         }
     }
 
@@ -27,7 +39,7 @@ module.exports = function(grunt) {
             src: ((function(){
                 var files = [];
       
-                files = addBasePaths(metas.en.path, metas.en.files);
+                files = addBasePaths(metas.es.path, metas.es.files);
 
                 return files;
 
@@ -44,7 +56,7 @@ module.exports = function(grunt) {
         tasks: ['compass']
       },
       html: {
-        files: ['sections/en/*.html'],
+        files: ['sections/es/*.html'],
         tasks: ['concat']
       },
       jekyll: {
