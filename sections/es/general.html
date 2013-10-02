@@ -30,10 +30,94 @@
 
 	<h3>Comentar código</h3>
 
-	<p>Si queremos ser condescendientes con nuestros colegas de Tecnología comentemos nuestro codigo. Se recomienda comentar los archivos al inicio incluyendo una pequeña descripción o título, autor y correo. Con estos datos cualquier persona podra localizarlos de ser necesario.</p>
+	<p>Si queremos ser condescendientes con el team de Tecnología comentemos nuestro código. Se recomienda comentar los archivos al inicio incluyendo una pequeña descripción o título, autor, fecha de creación y el correo electrónico. Con estos datos cualquier persona podra localizarlos de ser necesario y tendra una leve noción a cerca del código que va a trabajar.</p>
 
-	<p>Tambien se debera comentar bloques de codigo que no sean facil de desifrar en poco tiempo y se definira si </p>
+	<p>Tambien se debera comentar bloques de codigo que no sean facil de decifrar en poco tiempo y sera del gusto del programador comentar variables.  </p>
 
+	<h3>Idioma</h3>
+	<p>Debera usarse el idioma ingles como estandar para todos los comentarios, variables, funciones, metodos, IDs, classes, selectores, etc..</p>
+
+
+	<h2>Ejemplo HTML</h2>
+
+	<figure class="preCode">Incorrecto</figure>
+	<textarea class="brush:html">	
+		<HTML>
+				<head></head>
+				<BODY>
+					<DIV ID="contenedorPrincipal">  
+		            <HEADER role=banner><h1><a ID="logo" href="#">Hangar</a></h1>
+		                <ul ID=social>
+		                    ...
+		                    <li><a href="#" ID="linkRegreso">Return to Hangar</a></li>
+		                </ul></HEADER>
+		            <div ID=principal role=documento> ... </div>
+		            <nav ID=side CLASS=nav-right ROLE=navigation></nav>
+		          </DIV>
+		        </BODY>	        
+		  </HTML>
+	</textarea>
+
+	<figure class="preCode">Correcto</figure>
+	<textarea class="brush:html">
+		<html>
+			<head></head>
+			<body>		
+				<div id="main-container"> <!-- BEGIN main-container  -->
+					<header role="banner">
+						<h1><a id="logo" href="#">Hangar</a></h1>
+						<ul id="social">
+							...
+							<li><a href="#" id="linkRegreso">Return to Hangar</a></li>
+						</ul>
+					</header>
+					<div id="main" role="document"> ... </div>
+					<nav id="side" class="nav-right" role="navigation"> ... </nav>
+				</div>	<!-- END main-container  -->
+				
+			</body>
+		</html>
+	</textarea>
+
+	<h2>Ejemplo CSS</h2>
+
+	<figure class="preCode">Incorrecto</figure>
+	<textarea class="brush:css">	
+		#contenedorPrincipal {width: 960px;margin: 0 auto;position: relative; overflow: hidden;}
+		header {height: 60px;width: 100%;position: relative;border-bottom: 3px solid #eee;}
+		header h1 {position: absolute;top: 60px;width: 137px;padding: 0;height: 40px;}
+	</textarea>
+
+	<figure class="preCode">Correcto</figure>
+	<textarea class="brush:css">
+		/* page main container  */
+
+		#container {
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+			width: 960px;
+		}
+		
+		/* header module */
+
+		header {
+			border-bottom: 3px solid #eee;
+			height: 60px;
+			position: relative;
+			width: 100%;
+		}
+		
+			header h1 {
+				height: 40px;
+				padding: 0;
+				position: absolute;
+				top: 60px;
+				width: 137px;
+			}
+	</textarea>
+
+	<h2>Ejemplo Javascript</h2>
 	<figure class="preCode">Incorrecto</figure>
 	<textarea class="brush:js">	
 		var arr = ['bod','juan','john'];
@@ -49,22 +133,25 @@
 	<figure class="preCode">Correcto</figure>
 	<textarea class="brush:js">	
 		/**
-		* @title: Practicas generales
+		* @title: General practices 
 		* @author: John John Flores
+		* @created-date: mm-dd-yyyy
 		* @email: johnj@flores.es
 		*/
 
+
+		// Array of names
 		var arr = ['bod', 'juan', 'john'];
 		
 		for (var i=0, j = arr.length; i < j; i++) { 
 			say_hello(arr[i]);
 		}
 		
-		// Comentario de bloque de codigo como ejemplo.
+		// Comment block of code as an example
 
 		/**
-		 * [say_hello imprime en la consola el nombre que sea pasado como parametro]
-		 * @param  {[String]} name [nombre]
+		 * [say_hello prints on console]
+		 * @param  {[String]} name [ parameter -  it's concatenated to the console.log method ]
 		 * @return {[undefined]}      
 		 */
 		
@@ -73,5 +160,9 @@
 		}
 
 	</textarea>
+
+
+
+
 
 </section>
