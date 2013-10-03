@@ -82,7 +82,6 @@ meta:
 					<div id="main" role="document"> ... </div>
 					<nav id="side" class="nav-right" role="navigation"> ... </nav>
 				</div>	<!-- END main-container  -->
-				
 			</body>
 		</html>
 	</textarea>
@@ -171,6 +170,18 @@ meta:
 		 * @return {[undefined]}      
 		 */
 		
+		/*
+			Function: say_hello
+
+			Prints on console the name passed as parameter
+
+			Parameters:
+			  name - it's concatenated to the console.log method.
+
+			Returns:
+			  undefined.
+		*/
+		
 		function say_hello (name) {
 			console.log("hello " + name);
 		}
@@ -213,19 +224,59 @@ meta:
 		</header>
 	</textarea>
 
-
 	<h3>Cascading Style Sheets (CSS)</h3>
 	<ol>
-		<li>todos los selectores deberan ir en minuscula. Al igual que con el HTML en caso de que un selector sea formado por dos o mas palabras debera estar separado por un guin medio.</li>
-		<li>reglas ordenadas alfabeticamente.</li>
-		<li>En caso de usar un pre compilador de css (less, sass, stylus) se debera separar en modulos (componentes) el css. Ejemplo <a href="http://getbootstrap.com/customize/" target="_blank">twitter bootstrap</a>.</li>
+		<li>todos los selectores deberan ir en minuscula. Al igual que el HTML en caso de que un selector sea formado por dos o mas palabras debera estar separado por un guion medio.</li>
+		<li>reglas ordenadas alfabeticamente.*</li>
+		<li>nombre de selectores semanticos.</li>
+		<li>en caso de usar un pre compilador de css (<a href="http://lesscss.org/" target="_blank">less</a> , <a href="http://sass-lang.com/" target="_blank">sass</a> , <a href="http://learnboost.github.io/stylus/" target="_blank">stylus</a>) se debera separar en modulos (componentes) el css como lo hace por ejemplo <a href="http://getbootstrap.com/customize/" target="_blank">twitter bootstrap</a>.</li>
+		<li>idioma ingles.</li>
 	</ol>	
 
+	<textarea class="brush:css">
+		/* comment - selector order alphabetical */
+
+		#selector-name {
+			color: #000000;
+			margin: 0;
+			z-index: 26;
+		}
+
+		/* comment - bad example of selector module */
+		.btn-red {
+			...
+		}
+		/* comment - good example of selector module */
+		.btn-warning {
+			...
+		}
+	</textarea>
 
 	<h3>Javascript (js)</h3>
+	<ol>
+		<li>Declaracion de varibles al inicio</li>
+		<li>Nombrar variables en camelcase. </li>
+		<li>Hacer uso de Namespaces si tu javascript de código se necesita usar en otro lado</li>
+		<li></li>
+		<li></li>
+		<li>idioma ingles.</li>
+	</ol>	
 
+	<textarea class="brush:js">
+		
+		// 1.2 Camelcase vars
+		var johnDoe = "John Doe";
+
+		// 3
+		var MyNamespace = MyNamespace || {};
+
+		MyNamespace.MyModule = function() {
+			// Your module is now in a namespace!
+		}
+
+	</textarea>
 	
-	
+
 
 
 
