@@ -8,7 +8,7 @@ meta:
 
 <!-- #### GENERAL SECTION #### -->
 
-<h1>Estándares y Prácticas Recomendadas de Desarrollo</h1>
+<h1>Estándares de Desarrollo</h1>
 
 <h2>Información General</h2>
 
@@ -48,7 +48,7 @@ meta:
 
 	<h2>Ejemplo HTML</h2>
 
-	<figure class="preCode">html - Incorrecto</figure>
+	<figure class="preCode">Incorrecto</figure>
 	<textarea class="brush:html">	
 		<HTML>
 				<head></head>
@@ -66,7 +66,7 @@ meta:
 		  </HTML>
 	</textarea>
 
-	<figure class="preCode">html - Correcto</figure>
+	<figure class="preCode">Correcto</figure>
 	<textarea class="brush:html">
 		<html>
 			<head></head>
@@ -89,44 +89,52 @@ meta:
 
 	<h2>Ejemplo CSS</h2>
 
-	<figure class="preCode">css - Incorrecto</figure>
+	<figure class="preCode">Incorrecto</figure>
 	<textarea class="brush:css">	
 		#contenedorPrincipal {width: 960px;margin: 0 auto;position: relative; overflow: hidden;}
 		header {height: 60px;width: 100%;position: relative;border-bottom: 3px solid #eee;}
 		header h1 {position: absolute;top: 60px;width: 137px;padding: 0;height: 40px;}
 	</textarea>
 
-	<figure class="preCode">css - Correcto</figure>
+	<figure class="preCode">Correcto</figure>
 	<textarea class="brush:css">
+		/**
+		* @title: global styles 
+		* @author: John John Flores
+		* @created-date: mm-dd-yyyy
+		* @email: johnj@flores.es
+		*/
+
+
 		/* page main container  */
 
 		#container {
-			width: 960px;
 			margin: 0 auto;
-			position: relative;
 			overflow: hidden;
+			position: relative;
+			width: 960px;
 		}
 		
 		/* header module */
 
 		header {
-			height: 60px;
-			width: 100%;
-			position: relative;
 			border-bottom: 3px solid #eee;
+			height: 60px;
+			position: relative;
+			width: 100%;
 		}
 		
 			header h1 {
+				height: 40px;
+				padding: 0;
 				position: absolute;
 				top: 60px;
 				width: 137px;
-				padding: 0;
-				height: 40px;
 			}
 	</textarea>
 
 	<h2>Ejemplo Javascript</h2>
-	<figure class="preCode">javascript - Incorrecto</figure>
+	<figure class="preCode">Incorrecto</figure>
 	<textarea class="brush:js">	
 		var arr = ['bod','juan','john'];
 	for (var i=0,j=arr.length;i<j;i++){
@@ -138,7 +146,7 @@ meta:
 
 	</textarea>
 
-	<figure class="preCode">javascript - Correcto</figure>
+	<figure class="preCode">Correcto</figure>
 	<textarea class="brush:js">	
 		/**
 		* @title: General practices 
@@ -192,14 +200,28 @@ meta:
 
 	<h3>HyperText Markup Language (HTML)</h3>
 	
-	<ul>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-	</ul>
+	<ol>
+		<li>todos los tags y atributos deberan ir en miniscula con sus comillas dobles. En caso de que un tag, atributo, id o clase sea formado por dos palabras o mas, estara separado entre cada palabra por un guion medio.</li>
+		<li>en lo posible usar tags descriptivos (HTML 5).</li>
+		<li>idioma ingles.</li>
+	</ol>
+
+	<textarea class="brush:html">					
+		<header id="main-header" role="banner">
+			<h1><a id="logo" href="#">Hangar</a></h1>
+			...
+		</header>
+	</textarea>
+
 
 	<h3>Cascading Style Sheets (CSS)</h3>
+	<ol>
+		<li>todos los selectores deberan ir en minuscula. Al igual que con el HTML en caso de que un selector sea formado por dos o mas palabras debera estar separado por un guin medio.</li>
+		<li>reglas ordenadas alfabeticamente.</li>
+		<li>En caso de usar un pre compilador de css (less, sass, stylus) se debera separar en modulos (componentes) el css. Ejemplo <a href="http://getbootstrap.com/customize/" target="_blank">twitter bootstrap</a>.</li>
+	</ol>	
+
+
 	<h3>Javascript (js)</h3>
 
 	
