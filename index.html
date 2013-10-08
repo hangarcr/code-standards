@@ -227,20 +227,13 @@ meta:
 	<h3>Cascading Style Sheets (CSS)</h3>
 	<ol>
 		<li>todos los selectores deberan ir en minuscula. Al igual que el HTML en caso de que un selector sea formado por dos o mas palabras debera estar separado por un guion medio.</li>
-		<li>reglas ordenadas alfabeticamente.*</li>
-		<li>nombre de selectores semanticos. no usar adjetivos en los selectores</li>
+		<!-- <li>reglas ordenadas alfabeticamente.*</li> -->
+		<li>nombre de selectores semanticos. No usar adjetivos (color, tamaño, etc.. ) </li>
 		<li>en caso de usar un pre compilador de css (<a href="http://lesscss.org/" target="_blank">less</a> , <a href="http://sass-lang.com/" target="_blank">sass</a> , <a href="http://learnboost.github.io/stylus/" target="_blank">stylus</a>) se debera separar en modulos (componentes) el css como lo hace por ejemplo <a href="http://getbootstrap.com/customize/" target="_blank">twitter bootstrap</a>.</li>
 		<li>idioma ingles.</li>
-	</ol>	
+	</ol>
 
 	<textarea class="brush:css">
-		/* comment - selector order alphabetical */
-
-		#selector-name {
-			color: #000000;
-			margin: 0;
-			z-index: 26;
-		}
 
 		/* comment - bad example of selector module */
 		.btn-red {
@@ -252,15 +245,22 @@ meta:
 		}
 	</textarea>
 
+	<h4>CSS Utilidades</h4>	
+
+	<ol>
+		<li>Pre compiladores de css: <a href="http://lesscss.org/" target="_blank">less</a> , <a href="http://sass-lang.com/" target="_blank">sass</a> ( <a href="http://compass-style.org">compass</a> ).</li>
+		<li>Css frameworks: <a href="http://getbootstrap.com/customize/" target="_blank">Twitter Bootstrap</a>, <a href="http://www.getskeleton.com/" target="_blank">Skeleton</a>, <a href="http://foundation.zurb.com/" target="_blank">Foundation</a>.</li>
+	</ol>
+
 	<h3>Javascript (js)</h3>
 	<ol>
-		<li>Declaracion de varibles al <strong>inicio</strong></li>
+		<li>Declaracion de varibles al <strong>inicio</strong>.</li>
 		<li>Nombrar variables en <strong>Camelcase</strong>. </li>
-		<li>Hacer uso de <strong>Namespaces</strong> si tu javascript se necesita usar en otro lado</li>
-		<li>Capitalizacion de constructores</li>
+		<li>Hacer uso de <strong>Namespaces</strong> si tu javascript se necesita usar en otro lado.</li>
+		<li>Capitalizacion de constructores.</li>
 		<li>hacer uso de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode" target="_blank">strict mode</a>.</li>
 		<li>idioma ingles.</li>
-	</ol>	
+	</ol>			
 
 	<textarea class="brush:js">
 		
@@ -281,7 +281,14 @@ meta:
 	</textarea>
 	
 
+	<h4>JS Utilidades</h4>	
 
+	<ol>
+		<li>JS templates: Underscore, Handlebars, Mustache.</li>
+		<li>DOM manipulacion: jQuery, Backbone, Underscore, Ember, Angular</li>
+		<li>Livereload</li>
+		<li>Nodejs: Bower, Grunt, Requirejs, Yeoman.</li>
+	</ol>
 
 
 </section>

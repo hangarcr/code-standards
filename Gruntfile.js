@@ -7,15 +7,6 @@ module.exports = function(grunt) {
               '_front_matter.txt', 
               'general.html', 
               'codeConvention.html'
-              // 'markup.html', 
-              // 'css.html', 
-              // 'javascript.html', 
-              // 'performance.html', 
-              // 'browsers.html', 
-              // 'seo.html', 
-              // 'codeReviews.html', 
-              // 'appendices.html', 
-              // 'revisionHistory.html'
             ]
         }
     }
