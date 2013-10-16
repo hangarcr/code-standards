@@ -6,7 +6,8 @@ module.exports = function(grunt) {
             files: [
               '_front_matter.txt', 
               'general.html', 
-              'codeConvention.html'
+              'codeConvention.html',
+              'templates.html'
             ]
         }
     }
