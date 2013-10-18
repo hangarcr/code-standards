@@ -1,0 +1,306 @@
+---
+layout: main
+title: Estándares y Prácticas Recomendadas de Desarrollo
+meta:
+    description: Coding Standards and Frontend development Best Practices
+    keywords: Roundarch Isobar code standards, coding standards, frontend development, frontend best practices, html code standards, html5 code standards, css code standards, best code practices, development, frontend development
+---
+
+<!-- #### GENERAL SECTION #### -->
+
+<h1>Estándares de Desarrollo</h1>
+
+<h2>Información General</h2>
+
+<p>Este documento contiene directrices para aplicaciones creadas por el equipo de trabajo de Tecnología. Se creó y se mantiene en continua actualización con el fin de mantener una base homogenea de desarrollo del departamento.
+
+<p>La motivación principal de este documento tiene dos razones: <tt>1)</tt> consistencia de código y <tt>2)</tt> prácticas recomendadas. Al mantener la consistencia en los estilos y convenciones del código, podemos aliviar la carga del mantenimiento del código desactualizado y mitigar los riesgos de daño en el futuro. Adhiriéndonos a prácticas recomendadas y reconocidas aseguramos tiempos de carga de página, rendimiento y código mantenible optimizados.</p>
+
+
+<section id="general">
+
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		<h1>Directrices Generales</h1>
+	</div>
+	
+	<h2>Prácticas Generales</h2>
+	
+	
+	<h3>Sangrado</h3>
+	
+	<p>Para todos los lenguajes de código, exigimos que el sangrado se realice mediante tabulaciones suaves (usando el caracter de espacio). Pulsar <em>Tab</em> en su editor de texto debe ser equivalente a <b>cuatro espacios</b>.</p>
+	
+	
+	<h3>Legibilidad vs Compresión</h3>
+	
+	<p>Preferimos la legibilidad a la reducción de tamaño de los archivos cuando se trata de mantener archivos existentes. Se debe usar espaciado en blanco y comentarios para darle una mayor claridad al codigo. No es necesario para ningún desarrollador comprimir el HTML, CSS o JavaScript ya que estos pueden ser comprimidos mediate procesos de optimación.</p>
+
+	<h3>Comentar código</h3>
+
+	<p>Si queremos ser condescendientes con el team de Tecnología comentemos nuestro código. Se recomienda comentar los archivos al inicio incluyendo una pequeña descripción o título, autor, fecha de creación y el correo electrónico. Con estos datos cualquier persona podra localizarlos de ser necesario y tendra una leve noción a cerca del código que va a trabajar.</p>
+
+	<p>Tambien se debera comentar bloques de codigo que no sean facil de decifrar en poco tiempo y sera del gusto del programador comentar variables.  </p>
+
+	<h3>Idioma</h3>
+	<p>Debera usarse el idioma ingles como estandar para todos los comentarios, variables, funciones, metodos, IDs, classes, selectores, etc..</p>
+
+
+	<h2>Ejemplo HTML</h2>
+
+	<figure class="preCode">Incorrecto</figure>
+	<textarea class="brush:html">	
+		<HTML>
+				<head></head>
+				<BODY>
+					<DIV ID="contenedorPrincipal">  
+		            <HEADER role=banner><h1><a ID="logo" href="#">Hangar</a></h1>
+		                <ul ID=social>
+		                    ...
+		                    <li><a href="#" ID="linkRegreso">Return to Hangar</a></li>
+		                </ul></HEADER>
+		            <div ID=principal role=documento> ... </div>
+		            <nav ID=side CLASS=nav-right ROLE=navigation></nav>
+		          </DIV>
+		        </BODY>	        
+		  </HTML>
+	</textarea>
+
+	<figure class="preCode">Correcto</figure>
+	<textarea class="brush:html">
+		<html>
+			<head></head>
+			<body>		
+				<div id="main-container"> <!-- BEGIN main-container  -->
+					<header role="banner">
+						<h1><a id="logo" href="#">Hangar</a></h1>
+						<ul id="social">
+							...
+							<li><a href="#" id="linkRegreso">Return to Hangar</a></li>
+						</ul>
+					</header>
+					<div id="main" role="document"> ... </div>
+					<nav id="side" class="nav-right" role="navigation"> ... </nav>
+				</div>	<!-- END main-container  -->
+			</body>
+		</html>
+	</textarea>
+
+	<h2>Ejemplo CSS</h2>
+
+	<figure class="preCode">Incorrecto</figure>
+	<textarea class="brush:css">	
+		#contenedorPrincipal {width: 960px;margin: 0 auto;position: relative; overflow: hidden;}
+		header {height: 60px;width: 100%;position: relative;border-bottom: 3px solid #eee;}
+		header h1 {position: absolute;top: 60px;width: 137px;padding: 0;height: 40px;}
+	</textarea>
+
+	<figure class="preCode">Correcto</figure>
+	<textarea class="brush:css">
+		/**
+		* @title: global styles 
+		* @author: John John Flores
+		* @created-date: mm-dd-yyyy
+		* @email: johnj@flores.es
+		*/
+
+
+		/* page main container  */
+
+		#container {
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+			width: 960px;
+		}
+		
+		/* header module */
+
+		header {
+			border-bottom: 3px solid #eee;
+			height: 60px;
+			position: relative;
+			width: 100%;
+		}
+		
+			header h1 {
+				height: 40px;
+				padding: 0;
+				position: absolute;
+				top: 60px;
+				width: 137px;
+			}
+	</textarea>
+
+	<h2>Ejemplo Javascript</h2>
+	<figure class="preCode">Incorrecto</figure>
+	<textarea class="brush:js">	
+		var arr = ['bod','juan','john'];
+	for (var i=0,j=arr.length;i<j;i++){
+		say_hello(arr[i]);
+		}
+		function say_hello(name){
+		console.log("hello " + name);
+	}
+
+	</textarea>
+
+	<figure class="preCode">Correcto</figure>
+	<textarea class="brush:js">	
+		/**
+		* @title: General practices 
+		* @author: John John Flores
+		* @created-date: mm-dd-yyyy
+		* @email: johnj@flores.es
+		*/
+
+
+		// Array of names
+		var arr = ['bod', 'juan', 'john'];
+		
+		for (var i=0, j = arr.length; i < j; i++) { 
+			say_hello(arr[i]);
+		}
+		
+		// Comment block of code as an example
+
+		/**
+		 * [say_hello prints on console]
+		 * @param  {[String]} name [ parameter -  it's concatenated to the console.log method ]
+		 * @return {[undefined]}      
+		 */
+		
+		/*
+			Function: say_hello
+
+			Prints on console the name passed as parameter
+
+			Parameters:
+			  name - it's concatenated to the console.log method.
+
+			Returns:
+			  undefined.
+		*/
+		
+		function say_hello (name) {
+			console.log("hello " + name);
+		}
+
+	</textarea>
+
+
+
+
+
+</section>
+<!-- #### CODE CONVENTION #### -->
+
+<section id="codeConvetion">
+
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		<h1>Convención de código</h1>
+	</div>
+	
+	<h2>HTML / CSS / JS</h2>
+
+
+	<p>A continación expondremos las conveciones de código que usaremos durante el desarrollo de nuevos proyectos con el fin de tener una consistencia en el equipo de Tecnología.</p>
+
+	<p>También cabe mencionar que si adoptamos estas convenciones sera muy familiar trabajar con código hecho por otros compañeros.</p>
+
+	<h3>HyperText Markup Language (HTML)</h3>
+	
+	<ol>
+		<li>todos los tags y atributos deberan ir en miniscula con sus comillas dobles. En caso de que un tag, atributo, id o clase sea formado por dos palabras o mas, estara separado entre cada palabra por un guion medio.</li>
+		<li>en lo posible usar tags descriptivos (HTML 5).</li>
+		<li>idioma ingles.</li>
+	</ol>
+
+	<textarea class="brush:html">					
+		<header id="main-header" role="banner">
+			<h1><a id="logo" href="#">Hangar</a></h1>
+			...
+		</header>
+	</textarea>
+
+	<h3>Cascading Style Sheets (CSS)</h3>
+	<ol>
+		<li>todos los selectores deberan ir en minuscula. Al igual que el HTML en caso de que un selector sea formado por dos o mas palabras debera estar separado por un guion medio.</li>
+		<!-- <li>reglas ordenadas alfabeticamente.*</li> -->
+		<li>nombre de selectores semanticos. No usar adjetivos (color, tamaño, etc.. ) </li>
+		<li>en caso de usar un pre compilador de css (<a href="http://lesscss.org/" target="_blank">less</a> , <a href="http://sass-lang.com/" target="_blank">sass</a> , <a href="http://learnboost.github.io/stylus/" target="_blank">stylus</a>) se debera separar en modulos (componentes) el css como lo hace por ejemplo <a href="http://getbootstrap.com/customize/" target="_blank">twitter bootstrap</a>.</li>
+		<li>idioma ingles.</li>
+	</ol>
+
+	<textarea class="brush:css">
+
+		/* comment - bad example of selector module */
+		.btn-red {
+			...
+		}
+		/* comment - good example of selector module */
+		.btn-warning {
+			...
+		}
+	</textarea>
+
+	<h4>CSS Utilidades</h4>	
+
+	<ol>
+		<li>Pre compiladores de css: <a href="http://lesscss.org/" target="_blank">less</a> , <a href="http://sass-lang.com/" target="_blank">sass</a> ( <a href="http://compass-style.org">compass</a> ).</li>
+		<li>Css frameworks: <a href="http://getbootstrap.com/customize/" target="_blank">Twitter Bootstrap</a>, <a href="http://www.getskeleton.com/" target="_blank">Skeleton</a>, <a href="http://foundation.zurb.com/" target="_blank">Foundation</a>.</li>
+	</ol>
+
+	<h3>Javascript (js)</h3>
+	<ol>
+		<li>Declaracion de varibles al <strong>inicio</strong>.</li>
+		<li>Nombrar variables en <strong>Camelcase</strong>. </li>
+		<li>Hacer uso de <strong>Namespaces</strong> si tu javascript se necesita usar en otro lado.</li>
+		<li>Capitalizacion de constructores.</li>
+		<li>hacer uso de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode" target="_blank">strict mode</a>.</li>
+		<li>idioma ingles.</li>
+	</ol>			
+
+	<textarea class="brush:js">
+		
+		// 1 Vars on top .2 Camelcase vars
+		var johnDoe = "John Doe";
+
+		// 3. Namespacing
+		var MyNamespace = MyNamespace || {};
+
+		MyNamespace.MyModule = function() {
+			// Your module is now in a namespace!
+		}
+
+		// 4. Strict Mode
+		"use strict";
+		mistypedVaraible = 17; // throws a ReferenceErroar
+
+	</textarea>
+	
+
+	<h4>JS Utilidades</h4>	
+	<ol>
+		<li>DOM manipulacion: jQuery, Backbone, Underscore, Ember, Angular</li>
+		<li>JS templates: Underscore, Handlebars, Mustache.</li>
+		<li>Nodejs: Bower, Grunt, Requirejs, Yeoman.</li>
+		<li>Livereload.</li>
+	</ol>
+
+
+</section>
+
+
+<section id="templates">
+	<div class="intro has-icon">
+		<img class="icon" src="img/layout/icon-curly.png" alt="{}" />
+		<h1>Plantillas</h1>
+	</div>
+
+	<h2>Proyectos desde Zero</h2>
+
+	<p> <a href="http://html5boilerplate.com/" target="_blank">html5boilerplate</a> </p>
+
+</section>
